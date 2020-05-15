@@ -22,11 +22,11 @@ export default ({
           description,
           weight,
           variants,
-          images
-        }
-      ]
-    }
-  }
+          images,
+        },
+      ],
+    },
+  },
 }) => {
   const [selectedImage, updateSelectedImage] = useState(
     images.length && images[0].url_standard
@@ -38,7 +38,7 @@ export default ({
     retail_price,
     sale_price,
     map_price,
-    bigcommerce_id
+    bigcommerce_id,
   };
 
   return (
@@ -52,8 +52,9 @@ export default ({
                 '0.5rem 0 0 rgba(0, 0, 0, 1), -0.5rem 0 0 rgba(0, 0, 0, 1)',
               backgroundColor: 'rgba(0, 0, 0, 1)',
               color: 'white',
-              padding: '1rem'
-            }}>
+              padding: '1rem',
+            }}
+          >
             {name}
           </h1>
         </div>
@@ -73,10 +74,11 @@ export default ({
                   style={{
                     display: 'flex',
                     cursor: 'pointer',
-                    justifyContent: 'center'
-                  }}>
+                    justifyContent: 'center',
+                  }}
+                >
                   {images.length &&
-                    images.map(img => (
+                    images.map((img) => (
                       <img
                         height="100px"
                         width="100px"
@@ -101,7 +103,8 @@ export default ({
 
                 <AddToCartButton
                   productId={bigcommerce_id}
-                  variantId={variants[0].id}>
+                  variantId={variants[0].id}
+                >
                   Add to Cart
                 </AddToCartButton>
               </div>
@@ -112,7 +115,8 @@ export default ({
               </h4>
               <div
                 className="bc-product__description"
-                dangerouslySetInnerHTML={{ __html: description }}></div>
+                dangerouslySetInnerHTML={{ __html: description }}
+              ></div>
             </section>
             <section className="bc-single-product__specifications">
               <h4 className="bc-single-product__section-title">
@@ -154,10 +158,6 @@ export const query = graphql`
         variants {
           product_id
           id
-          option_values {
-            label
-            option_display_name
-          }
           sku
         }
       }

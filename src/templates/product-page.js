@@ -9,7 +9,7 @@ export const ProductPageTemplate = ({
   title,
   heading,
   description,
-  products
+  products,
 }) => (
   <div className="content">
     <div
@@ -17,8 +17,9 @@ export const ProductPageTemplate = ({
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`
-      }}>
+        })`,
+      }}
+    >
       <h2
         className="has-text-weight-bold is-size-1"
         style={{
@@ -26,15 +27,16 @@ export const ProductPageTemplate = ({
             '0.5rem 0 0 rgba(0, 0, 0, 0.75), -0.5rem 0 0 rgba(0, 0, 0, 0.75)',
           backgroundColor: 'rgba(0, 0, 0, 0.75)',
           color: 'white',
-          padding: '1rem'
-        }}>
+          padding: '1rem',
+        }}
+      >
         {title}
       </h2>
     </div>
     <section className="section section--gradient">
       <div className="container">
         <div className="section bc-product-grid bc-product-grid--archive bc-product-grid--4col">
-          {products.map(product => (
+          {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
@@ -48,7 +50,7 @@ ProductPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   description: PropTypes.string,
-  products: PropTypes.array
+  products: PropTypes.array,
 };
 
 const ProductPage = ({ data }) => {
@@ -71,12 +73,12 @@ const ProductPage = ({ data }) => {
 ProductPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
+      frontmatter: PropTypes.object,
     }),
     allBigCommerceProducts: PropTypes.shape({
-      nodes: PropTypes.array
-    })
-  })
+      nodes: PropTypes.array,
+    }),
+  }),
 };
 
 export default ProductPage;
@@ -105,10 +107,6 @@ export const productPageQuery = graphql`
         variants {
           product_id
           id
-          option_values {
-            label
-            option_display_name
-          }
           sku
         }
       }
