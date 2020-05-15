@@ -2,7 +2,7 @@
   "name": "campfire-bc-storefront",
   "description": "Campfire storefront for BigCommerce",
   "version": "0.5.0",
-  "author": "BigCommerce",
+  "author": "Jo Sprague <josiah.sprague@gmail.com>",
   "dependencies": {
     "aws-sdk": "^2.488.0",
     "axios": "^0.19.0",
