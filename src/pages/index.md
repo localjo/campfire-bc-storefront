@@ -1,9 +1,9 @@
 ---
 templateKey: index-page
-title: The world brought to your doorstep
+title: Campfire game
 subtitle: Your one-stop shop for unique products you'll love
 image: /img/city-background.jpg
-heading: The world brought to your doorstep
+heading: Campfire time!
 mainpitch:
   title: What is My Store?
   description: >
@@ -13,7 +13,7 @@ mainpitch:
 bigimage:
   image: /img/bazaar-home.jpg
   alt: Bazaar
-intro:  
+intro:
   blurbs:
     - image: /img/close-up-cloth.jpg
       text: >
@@ -33,4 +33,3 @@ intro:
     for a rainy day to help open your mind? A piece of apparel that tells a story all it's
     own? That's what we seek out and hope you'll find here.
 ---
-
