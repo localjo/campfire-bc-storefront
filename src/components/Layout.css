@@ -5,16 +5,6 @@
   visibility: hidden;
 }
 
-.svg-scene {
-  background-size: contain;
-  background-position: top center;
-  background-attachment: fixed;
-  background-color: rgb(188, 55, 128);
-  background-repeat: no-repeat;
-  max-width: 100%;
-  background-image: url(../svg/campfire-scene-export.svg);
-}
-
 .u-bc-screen-reader-text, .u-bc-visual-hide, .u-bc-visual-show {
   border: 0;
   clip: rect(0 0 0 0);

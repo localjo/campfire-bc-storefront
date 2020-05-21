@@ -15,7 +15,6 @@ export const IndexPageTemplate = ({
   post,
 }) => (
   <div>
-    <div className="full-width-image margin-top-0 svg-scene"></div>
     <section className="section section--gradient">
       <div className="container">
         <div className="section">

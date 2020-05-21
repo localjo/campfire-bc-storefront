@@ -6,8 +6,13 @@ $brand-black-invert: #fff
 
 $primary: $brand-black
 $primary-invert: $brand-black-invert
-$body-color: #333
+$body-color: #fff
+$body-background-color: rgb(30, 38, 80)
 $black: #2b2523
+$text: white
+$text-strong: white
+$text-light: white
+$subtitle-color: white
 
 .navbar .navbar-menu
   box-shadow:none !important
@@ -158,11 +163,24 @@ $menu-label-color: $white-ter
 
 // overrides
 
-a.navbar-item
-  max-height: 3rem
-
-.navbar-item img
-  max-height: 125px
-
 .has-background-black
   background-color: #000000 !important
+
+.navbar.is-transparent
+  background-color: transparent !important
+  width: 100%
+  color: white !important
+  .navbar-item
+    color: white !important
+
+.navbar-brand
+  padding: 0.5em
+
+.navbar-item
+  font-weight: bold
+
+.scene-image
+  position: absolute
+
+.section
+  background: $body-background-color

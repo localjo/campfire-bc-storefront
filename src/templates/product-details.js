@@ -79,6 +79,7 @@ export default ({
                 >
                   {images.length &&
                     images.map((img) => (
+                      // eslint-disable-next-line
                       <img
                         height="100px"
                         width="100px"

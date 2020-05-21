@@ -7,9 +7,7 @@ heading: Campfire time!
 mainpitch:
   title: What is My Store?
   description: >
-    My Store is a journey waiting to be had, from our journeys in the past. An 
-    ever changing collection of products that are meant to help broaden your 
-    daily life through the creation of others.
+    For millennia, people have come together around campfires to warm themselves and build friendships. Campfire is a question-based card game that brings people together to create a cozy environment, share stories, have fun, and get to know each other.
 bigimage:
   image: /img/bazaar-home.jpg
   alt: Bazaar
