@@ -13,16 +13,10 @@ bigimage:
   alt: Bazaar
 intro:
   blurbs:
-    - image: /img/close-up-cloth.jpg
+    - title: Kindling
       text: >
-        Close up of cloth
-    - image: /img/art-chairs.jpg
+        Start with some kindling as you warm-up and get comfortable.
+    - title: Flames
       text: >
-        Artistic chairs
-    - image: /img/arts-and-crafts.jpg
-      text: >
-        Colorful arts and crafts
-    - image: /img/assorted-boutique.jpg
-      text: >
-        Assorted boutique
+        Once the fire is started, get a little closer and more personal around some flames.
 ---
