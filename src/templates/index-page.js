@@ -4,64 +4,30 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import PhotoGrid from '../components/PhotoGrid';
-import BlogItem from '../components/BlogItem';
 
-export const IndexPageTemplate = ({
-  title,
-  subtitle,
-  mainpitch,
-  bigimage,
-  intro,
-  post,
-}) => (
-  <div>
-    <section className="section section--gradient">
+export const IndexPageTemplate = ({ mainpitch, intro }) => (
+  <>
+    <section className="section">
       <div className="container">
         <div className="section">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-
-                <section className="section">
-                  <div className="container has-text-centered">
-                    <div className="block">
-                      <img src={bigimage.image.publicURL} alt={bigimage.alt} />
-                    </div>
-
-                    <PhotoGrid gridItems={intro.blurbs} />
-
-                    <h4 className="title is-spaced is-4">{intro.heading}</h4>
-                    <p className="subtitle">{intro.description}</p>
-                  </div>
-                </section>
-
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <BlogItem post={post} columnWidth="is-12" />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div>
+              <div className="container has-text-centered">
+                <h4 className="title is-spaced is-4">{mainpitch.title}</h4>
+                <p className="subtitle">{mainpitch.description}</p>
+                <PhotoGrid gridItems={intro.blurbs} />
+              </div>
+              <div className="column is-12 has-text-centered">
+                <Link className="btn" to="/products">
+                  Get a Copy!
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  </div>
+  </>
 );
 
 IndexPageTemplate.propTypes = {
@@ -151,8 +117,6 @@ export const pageQuery = graphql`
             }
             text
           }
-          heading
-          description
         }
       }
     }

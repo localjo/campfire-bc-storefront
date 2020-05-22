@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { Helmet } from 'react-helmet';
 
@@ -24,6 +24,18 @@ import useSiteMetadata from './SiteMetadata';
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   const parallaxRef = useRef();
+  const [bannerOffset, setBannerOffset] = useState(0.5);
+  useEffect(() => {
+    function handleResize() {
+      const { innerWidth, innerHeight } = window;
+      const base = innerWidth <= 768 ? 600 : innerWidth < 1215 ? 1000 : 1500;
+      const offset = ((innerWidth / base) * 600) / innerHeight;
+      setBannerOffset(offset < 0.8 ? offset : 0.8);
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <>
       <Helmet>
@@ -69,7 +81,7 @@ const TemplateWrapper = ({ children }) => {
       <BackgroundNarrow className="scene-image is-hidden-tablet" />
       <BackgroundNormal className="scene-image is-hidden-mobile is-hidden-widescreen" />
       <BackgroundWide className="scene-image is-hidden-touch is-hidden-desktop-only" />
-      <Parallax ref={parallaxRef} pages={3} scrolling={false}>
+      <Parallax ref={parallaxRef} pages={2} scrolling="false">
         <ParallaxLayer offset={0} speed={0.001}>
           <PineTreesNarrow className="scene-image is-hidden-tablet" />
           <PineTreesNormal className="scene-image is-hidden-mobile is-hidden-widescreen" />
@@ -79,12 +91,14 @@ const TemplateWrapper = ({ children }) => {
           <CampfireNarrow className="scene-image is-hidden-tablet" />
           <CampfireNormal className="scene-image is-hidden-mobile is-hidden-widescreen" />
           <CampfireWide className="scene-image is-hidden-touch is-hidden-desktop-only" />
+          <div className="scene-banner">
+            <Navbar />
+          </div>
         </ParallaxLayer>
-        <div className="scene-banner">
-          <Navbar />
-        </div>
-        <ParallaxLayer offset={0.46} speed={1}>
+        <ParallaxLayer offset={bannerOffset} speed={0.5} factor={0.3}>
           {children}
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.99} speed={0.5}>
           <Footer />
         </ParallaxLayer>
       </Parallax>
