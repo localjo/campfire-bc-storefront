@@ -14,10 +14,6 @@ import CampfireNarrow from '../svg/campfire-narrow.inline.svg';
 import CampfireWide from '../svg/campfire-wide.inline.svg';
 import Campfire from '../svg/campfire.inline.svg';
 
-import ForegroundNarrow from '../svg/foreground-narrow.inline.svg';
-import ForegroundWide from '../svg/foreground-wide.inline.svg';
-import Foreground from '../svg/foreground.inline.svg';
-
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Notify from './bigcommerce/Notify';
@@ -64,14 +60,12 @@ const TemplateWrapper = ({ children }) => {
           href="/img/favicon-16x16.png"
           sizes="16x16"
         />
-
         <link
           rel="mask-icon"
           href="/img/safari-pinned-tab.svg"
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
-
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
