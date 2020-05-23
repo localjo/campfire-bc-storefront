@@ -14,6 +14,7 @@ import Layout from '../components/Layout';
 export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
   <>
     <ParallaxLayer offset={bannerOffset} speed={0}>
+      {/* Cover background */}
       <div className="section" style={{ minHeight: '3000px' }}></div>
     </ParallaxLayer>
     <ParallaxLayer offset={bannerOffset - 0.05} speed={0}>

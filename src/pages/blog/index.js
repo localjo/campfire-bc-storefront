@@ -1,38 +1,35 @@
-import React from 'react'
+import React from 'react';
+import { ParallaxLayer } from '@react-spring/parallax';
 
-import Layout from '../../components/Layout'
-import BlogRoll from '../../components/BlogRoll'
+import ContentTop from '../../svg/content-top-wide.inline.svg';
+import Layout from '../../components/Layout';
+import BlogRoll from '../../components/BlogRoll';
+
+const BlogPageTemplate = ({ bannerOffset }) => (
+  <>
+    <ParallaxLayer offset={bannerOffset - 0.05} speed={0}>
+      {/* Cover background */}
+      <ContentTop style={{ marginBottom: '-10px' }} />
+      <div className="section" style={{ minHeight: '3000px' }}></div>
+    </ParallaxLayer>
+    <ParallaxLayer offset={bannerOffset} speed={0}>
+      <section className="section">
+        <div className="container">
+          <div className="content">
+            <BlogRoll />
+          </div>
+        </div>
+      </section>
+    </ParallaxLayer>
+  </>
+);
 
 export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div
-          className="full-width-image-container margin-top-0"
-          style={{
-            backgroundImage: `url('/img/retail-shop.jpg')`,
-          }}
-        >
-          <h1
-            className="has-text-weight-bold is-size-1"
-            style={{
-              boxShadow: '0.5rem 0 0 rgba(0, 0, 0, 0.75), -0.5rem 0 0 rgba(0, 0, 0, 0.75)',
-              backgroundColor: 'rgba(0, 0, 0, 0.75)',
-              color: 'white',
-              padding: '1rem',
-            }}
-          >
-            The Store Blog
-          </h1>
-        </div>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <BlogRoll />
-            </div>
-          </div>
-        </section>
+        <BlogPageTemplate />
       </Layout>
-    )
+    );
   }
 }

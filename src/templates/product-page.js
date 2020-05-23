@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ParallaxLayer } from '@react-spring/parallax';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import ProductCard from '../components/bigcommerce/ProductCard';
+import ContentTop from '../svg/content-top-wide.inline.svg';
 
 export const ProductPageTemplate = ({
   image,
@@ -10,39 +12,28 @@ export const ProductPageTemplate = ({
   heading,
   description,
   products,
+  bannerOffset,
 }) => (
-  <div className="content">
-    <div
-      className="full-width-image-container margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-      }}
-    >
-      <h2
-        className="has-text-weight-bold is-size-1"
-        style={{
-          boxShadow:
-            '0.5rem 0 0 rgba(0, 0, 0, 0.75), -0.5rem 0 0 rgba(0, 0, 0, 0.75)',
-          backgroundColor: 'rgba(0, 0, 0, 0.75)',
-          color: 'white',
-          padding: '1rem',
-        }}
-      >
-        {title}
-      </h2>
-    </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section bc-product-grid bc-product-grid--archive bc-product-grid--4col">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+  <>
+    <ParallaxLayer offset={bannerOffset - 0.05} speed={0}>
+      {/* Cover background */}
+      <ContentTop style={{ marginBottom: '-10px' }} />
+      <div className="section" style={{ minHeight: '3000px' }}></div>
+    </ParallaxLayer>
+    <ParallaxLayer offset={bannerOffset} speed={0}>
+      <div className="content">
+        <section className="section section--gradient">
+          <div className="container">
+            <div className="section bc-product-grid bc-product-grid--archive bc-product-grid--4col">
+              {products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
-  </div>
+    </ParallaxLayer>
+  </>
 );
 
 ProductPageTemplate.propTypes = {
