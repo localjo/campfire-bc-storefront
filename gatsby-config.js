@@ -1,4 +1,5 @@
 var proxy = require('http-proxy-middleware');
+const path = require('path');
 require('dotenv').config();
 
 module.exports = {
@@ -22,6 +23,15 @@ module.exports = {
           BigCommerceCategories: '/catalog/categories',
           BigCommerceBrands: '/catalog/brands',
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          react: path.resolve('node_modules/react'),
+        },
+        extensions: [],
       },
     },
     {
