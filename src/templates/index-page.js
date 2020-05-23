@@ -6,63 +6,107 @@ import { Link, graphql } from 'gatsby';
 import CardBack from '../svg/card-back.inline.svg';
 import KindlingCard from '../svg/kindling-card.inline.svg';
 import FlamesCard from '../svg/flames-card.inline.svg';
+import SparksCard from '../svg/sparks-card.inline.svg';
+import EmbersCard from '../svg/embers-card.inline.svg';
+import ContentTop from '../svg/content-top-wide.inline.svg';
 import Layout from '../components/Layout';
 
 export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
   <>
-    <ParallaxLayer offset={bannerOffset + 0.05} speed={1}>
-      <div className="columns">
-        <div className="column is-8 is-offset-2">
-          <div className="container has-text-centered">
-            <h4 className="title is-spaced is-3">{mainpitch.title}</h4>
-            <p className="subtitle">{mainpitch.description}</p>
-          </div>
-        </div>
-      </div>
+    <ParallaxLayer offset={bannerOffset} speed={0}>
+      <div className="section" style={{ minHeight: '3000px' }}></div>
     </ParallaxLayer>
-    <ParallaxLayer offset={bannerOffset + 0.21} speed={0.8}>
+    <ParallaxLayer offset={bannerOffset - 0.05} speed={0}>
+      <ContentTop style={{ marginBottom: '-10px' }} />
       <div className="section">
         <div className="columns">
-          <div className="column is-4 is-offset-1">
-            <CardBack style={{ transform: 'rotate(-6deg)' }} />
+          <div className="column is-8 is-offset-2">
+            <div className="container has-text-centered">
+              <h4 className="title is-spaced is-3">{mainpitch.title}</h4>
+              <p className="subtitle">{mainpitch.description}</p>
+            </div>
           </div>
         </div>
       </div>
     </ParallaxLayer>
-    <ParallaxLayer offset={bannerOffset + 0.25} speed={1}>
+
+    <ParallaxLayer offset={0.9} speed={-0.1}>
+      <div className="columns">
+        <div className="column is-4 is-offset-1">
+          <CardBack style={{ transform: 'rotate(-6deg)' }} />
+        </div>
+      </div>
+    </ParallaxLayer>
+    <ParallaxLayer offset={0.9} speed={0}>
       <div className="columns">
         <div className="column is-one-third is-offset-one-fifth">
           <KindlingCard style={{ transform: 'rotate(1deg)' }} />
         </div>
-        <div className="column">
-          <h5 className="title is-spaced is-4">{intro.blurbs[0].title}</h5>
+        <div className="column is-4">
+          <h5 className="title is-spaced">{intro.blurbs[0].title}</h5>
           <p className="subtitle">{intro.blurbs[0].text}</p>
         </div>
       </div>
     </ParallaxLayer>
-    <ParallaxLayer offset={1} speed={0.8}>
-      <div className="section">
-        <div className="columns">
-          <div className="column"></div>
-          <div className="column is-one-third">
-            <CardBack style={{ transform: 'rotate(6deg)' }} />
-          </div>
+
+    <ParallaxLayer offset={1.25} speed={-0.1}>
+      <div className="columns">
+        <div className="column is-offset-7 is-one-third">
+          <CardBack style={{ transform: 'rotate(6deg)' }} />
         </div>
       </div>
     </ParallaxLayer>
-    <ParallaxLayer offset={bannerOffset + 0.45} speed={1.2}>
+    <ParallaxLayer offset={1.3} speed={0}>
       <div className="columns">
-        <div className="column">
-          <h5 className="title is-spaced is-4">{intro.blurbs[1].title}</h5>
+        <div className="column is-offset-2 is-4">
+          <h5 className="title is-spaced">{intro.blurbs[1].title}</h5>
           <p className="subtitle">{intro.blurbs[1].text}</p>
         </div>
-
-        <div className="column is-one-third is-offset-one-fifth">
-          <FlamesCard />
+        <div className="column is-one-third">
+          <FlamesCard style={{ transform: 'rotate(-1deg)' }} />
         </div>
       </div>
     </ParallaxLayer>
-    <ParallaxLayer offset={1} speed={1.2}>
+
+    <ParallaxLayer offset={1.6} speed={-0.1}>
+      <div className="columns">
+        <div className="column is-4 is-offset-1">
+          <CardBack style={{ transform: 'rotate(-6deg)' }} />
+        </div>
+      </div>
+    </ParallaxLayer>
+    <ParallaxLayer offset={1.7} speed={0}>
+      <div className="columns">
+        <div className="column is-one-third is-offset-one-fifth">
+          <SparksCard style={{ transform: 'rotate(1deg)' }} />
+        </div>
+        <div className="column is-4">
+          <h5 className="title is-spaced">{intro.blurbs[2].title}</h5>
+          <p className="subtitle">{intro.blurbs[2].text}</p>
+        </div>
+      </div>
+    </ParallaxLayer>
+
+    <ParallaxLayer offset={1.95} speed={-0.1}>
+      <div className="columns">
+        <div className="column is-offset-7 is-one-third">
+          <CardBack style={{ transform: 'rotate(6deg)' }} />
+        </div>
+      </div>
+    </ParallaxLayer>
+    <ParallaxLayer offset={2.1} speed={0}>
+      <div className="columns">
+        <div className="column is-offset-2 is-4">
+          <h5 className="title is-spaced">{intro.blurbs[3].title}</h5>
+          <p className="subtitle">{intro.blurbs[3].text}</p>
+        </div>
+        <div className="column is-one-third">
+          <EmbersCard style={{ transform: 'rotate(-1deg)' }} />
+        </div>
+      </div>
+    </ParallaxLayer>
+
+    <ParallaxLayer offset={2.5} speed={0}>
       <div className="column is-12 has-text-centered">
         <Link className="btn" to="/products">
           Get a Copy!

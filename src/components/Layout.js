@@ -3,15 +3,19 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { Helmet } from 'react-helmet';
 
 import BackgroundNarrow from '../svg/background-narrow.inline.svg';
+import BackgroundWide from '../svg/background-wide.inline.svg';
 import Background from '../svg/background.inline.svg';
 
 import PineTreesNarrow from '../svg/pine-trees-narrow.inline.svg';
+import PineTreesWide from '../svg/pine-trees-wide.inline.svg';
 import PineTrees from '../svg/pine-trees.inline.svg';
 
 import CampfireNarrow from '../svg/campfire-narrow.inline.svg';
+import CampfireWide from '../svg/campfire-wide.inline.svg';
 import Campfire from '../svg/campfire.inline.svg';
 
 import ForegroundNarrow from '../svg/foreground-narrow.inline.svg';
+import ForegroundWide from '../svg/foreground-wide.inline.svg';
 import Foreground from '../svg/foreground.inline.svg';
 
 import Navbar from './Navbar';
@@ -28,9 +32,9 @@ const TemplateWrapper = ({ children }) => {
   useEffect(() => {
     function handleResize() {
       const { innerWidth, innerHeight } = window;
-      const base = innerWidth <= 768 ? 600 : 1000;
+      const base = innerWidth <= 768 ? 600 : innerWidth <= 1408 ? 1000 : 1500;
       const offset = ((innerWidth / base) * 600) / innerHeight;
-      setBannerOffset(offset < 0.8 ? offset : 0.8);
+      setBannerOffset(Math.min(Math.max(offset, 0), 0.65));
     }
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -78,28 +82,25 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Notify />
-      <Parallax ref={parallaxRef} pages={2} scrolling="false">
-        <ParallaxLayer offset={0} speed={0.4}>
-          <BackgroundNarrow className="scene-image is-hidden-tablet" />
-          <Background className="scene-image is-hidden-mobile" />
-        </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.6}>
+      <BackgroundNarrow className="scene-image is-hidden-tablet" />
+      <Background className="scene-image is-hidden-mobile is-hidden-fullhd" />
+      <BackgroundWide className="scene-image is-hidden-touch is-hidden-desktop-only is-hidden-widescreen-only" />
+      <Parallax ref={parallaxRef} pages={3} scrolling="false">
+        <ParallaxLayer offset={0} speed={-0.6}>
           <PineTreesNarrow className="scene-image is-hidden-tablet" />
-          <PineTrees className="scene-image is-hidden-mobile" />
+          <PineTrees className="scene-image is-hidden-mobile is-hidden-fullhd" />
+          <PineTreesWide className="scene-image is-hidden-touch is-hidden-desktop-only is-hidden-widescreen-only" />
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={1}>
+        <ParallaxLayer offset={0} speed={-0.3}>
           <CampfireNarrow className="scene-image is-hidden-tablet" />
-          <Campfire className="scene-image is-hidden-mobile" />
+          <Campfire className="scene-image is-hidden-mobile is-hidden-fullhd" />
+          <CampfireWide className="scene-image is-hidden-touch is-hidden-desktop-only is-hidden-widescreen-only" />
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={1.4}>
-          <ForegroundNarrow className="scene-image is-hidden-tablet" />
-          <Foreground className="scene-image is-hidden-mobile" />
-        </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.1}>
+        <ParallaxLayer offset={0} speed={0}>
           <Navbar />
         </ParallaxLayer>
         {cloneElement(children, { bannerOffset })}
-        <ParallaxLayer offset={1.5} speed={1}>
+        <ParallaxLayer offset={2.9} speed={0}>
           <Footer />
         </ParallaxLayer>
       </Parallax>
