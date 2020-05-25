@@ -15,6 +15,7 @@ $text-light: white
 $title-color: white
 $subtitle-color: white
 $navbar-item-color: white
+$campfire-pink: rgb(188, 55, 128)
 
 .navbar .navbar-menu
   box-shadow:none !important
@@ -72,7 +73,7 @@ $navbar-item-color: white
   cursor: pointer
   &:hover
    color: #fff
-   background-color: rgb(188, 55, 128)
+   background-color: $campfire-pink
 
 .margin-top-0
   margin-top: 0 !important
@@ -87,7 +88,7 @@ $navbar-item-color: white
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
 footer.footer
-  padding: 0rem 0rem 0rem 0rem
+  padding: 0rem 1rem 0rem 1.2rem
   background-color: transparent
 
 //Menu overrides
@@ -100,23 +101,23 @@ $menu-list-border-left: 1px solid $brand-black-invert
 $menu-label-color: $white-ter
 
 
-.menu-label
-  font-size: 1em !important
-  text-align: left
-.menu-list
-  list-style: none !important
-  text-align: left
+.footer a
+  color: $white-ter
 .social
   padding: 2em
 .social a
-    padding: .5em .5em .3em .5em
-    border-radius: 1em
-    background-color: $white-ter
-    margin: .5em
-    width: 1em
-    height: 1em
-    vertical-align: middle
-    display: inline
+  padding: .5em .5em .3em .5em
+  border-radius: 1em
+  width: 1em
+  height: 1em
+  vertical-align: middle
+  display: inline
+  svg
+    fill: $white-ter
+
+.footer a:hover, .social a:hover svg
+  color: $campfire-pink
+  fill: $campfire-pink
 
 // blog roll
 .blog-list-item
@@ -171,7 +172,7 @@ $menu-label-color: $white-ter
   .navbar .navbar-menu
     background: $body-background-color
     .navbar-item:hover, .navbar-item:focus
-      background: rgb(188, 55, 128)
+      background: $campfire-pink
 
 #___gatsby
   font-family: 'Alata', Helvetica, sans-serif
@@ -194,7 +195,7 @@ $menu-label-color: $white-ter
           top: calc(50% + (1rem / 8))
 
 .has-background-black
-  background-color: #000000 !important
+  background-color: rgba(0,0,0,0.6) !important
 
 .navbar.is-transparent
   background-color: transparent !important

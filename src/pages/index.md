@@ -1,9 +1,8 @@
 ---
 templateKey: index-page
-title: Campfire game
+title: Campfire Questions
 subtitle: Your one-stop shop for unique products you'll love
-image: /img/city-background.jpg
-heading: Campfire time!
+heading: Campfire Questions
 mainpitch:
   title: What is Campfire?
   shortdescription: Campfire is a card game that brings people together to share stories.
@@ -26,4 +25,7 @@ intro:
     - title: Embers
       text: >
         If you feel like you could share anything with the people you’re playing with, end the game with a few embers.
+    - title: Categories
+      text: >
+        Campfire is played in four phases that build on each other as the game goes on.
 ---

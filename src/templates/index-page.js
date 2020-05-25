@@ -38,10 +38,38 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
     <ParallaxLayer offset={0.78} speed={0}>
       <div className="section">
         <div className="columns">
+          <div className="column is-one-third">
+            <CardBack
+              className="card-svg"
+              style={{ transform: 'rotate(-1deg)' }}
+            />
+          </div>
+          <div className="column is-offset-2 is-4 has-text-centered-touch is-hidden-short">
+            <p className="subtitle">{intro.blurbs[4].text}</p>
+          </div>
+        </div>
+      </div>
+    </ParallaxLayer>
+    <ParallaxLayer offset={0.78} speed={0.05}>
+      <div className="section">
+        <div className="columns">
+          <div className="column is-offset-7 is-one-third">
+            <CardBack
+              className="card-svg"
+              style={{ transform: 'rotate(4deg)' }}
+            />
+          </div>
+        </div>
+      </div>
+    </ParallaxLayer>
+
+    <ParallaxLayer offset={1.15} speed={0}>
+      <div className="section">
+        <div className="columns">
           <div className="column is-4 is-offset-1">
             <CardBack
               className="card-svg"
-              style={{ transform: 'rotate(-6deg)' }}
+              style={{ transform: 'rotate(-4deg)' }}
             />
           </div>
           <div className="column is-4 has-text-centered-touch is-hidden-short">
@@ -51,7 +79,7 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
         </div>
       </div>
     </ParallaxLayer>
-    <ParallaxLayer offset={0.8} speed={0.05}>
+    <ParallaxLayer offset={1.19} speed={0.05}>
       <div className="section">
         <div className="columns">
           <div className="column is-one-third is-offset-one-fifth">
@@ -66,13 +94,13 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
       </div>
     </ParallaxLayer>
 
-    <ParallaxLayer offset={1.2} speed={0}>
+    <ParallaxLayer offset={1.52} speed={0}>
       <div className="section">
         <div className="columns">
           <div className="column is-offset-1 is-4">
             <CardBack
               className="card-svg"
-              style={{ transform: 'rotate(6deg)' }}
+              style={{ transform: 'rotate(4deg)' }}
             />
           </div>
           <div className="column is-offset-2 is-4 has-text-centered-touch is-hidden-short">
@@ -82,7 +110,7 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
         </div>
       </div>
     </ParallaxLayer>
-    <ParallaxLayer offset={1.24} speed={0.05}>
+    <ParallaxLayer offset={1.58} speed={0.05}>
       <div className="section">
         <div className="columns">
           <div className="column is-one-third">
@@ -95,19 +123,19 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
       </div>
     </ParallaxLayer>
 
-    <ParallaxLayer offset={1.62} speed={0}>
+    <ParallaxLayer offset={1.91} speed={0}>
       <div className="section">
         <div className="columns">
           <div className="column is-4 is-offset-1">
             <CardBack
               className="card-svg"
-              style={{ transform: 'rotate(-6deg)' }}
+              style={{ transform: 'rotate(-4deg)' }}
             />
           </div>
         </div>
       </div>
     </ParallaxLayer>
-    <ParallaxLayer offset={1.68} speed={0.05}>
+    <ParallaxLayer offset={1.98} speed={0.05}>
       <div className="section">
         <div className="columns">
           <div className="column is-one-third is-offset-one-fifth">
@@ -124,19 +152,19 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
       </div>
     </ParallaxLayer>
 
-    <ParallaxLayer offset={2.03} speed={0}>
+    <ParallaxLayer offset={2.28} speed={0}>
       <div className="section">
         <div className="columns">
           <div className="column is-offset-7 is-one-third">
             <CardBack
               className="card-svg"
-              style={{ transform: 'rotate(6deg)' }}
+              style={{ transform: 'rotate(4deg)' }}
             />
           </div>
         </div>
       </div>
     </ParallaxLayer>
-    <ParallaxLayer offset={2.1} speed={0.05}>
+    <ParallaxLayer offset={2.38} speed={0.05}>
       <div className="section">
         <div className="columns">
           <div className="column is-one-third">
@@ -153,7 +181,7 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
       </div>
     </ParallaxLayer>
 
-    <ParallaxLayer offset={2.5} speed={0}>
+    <ParallaxLayer offset={2.75} speed={0}>
       <div className="column is-12 has-text-centered">
         <Link className="btn" to="/products">
           Get a Copy!

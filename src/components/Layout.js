@@ -94,7 +94,7 @@ const TemplateWrapper = ({ children }) => {
           <Navbar />
         </ParallaxLayer>
         {cloneElement(children, { bannerOffset })}
-        <ParallaxLayer offset={2.9} speed={0}>
+        <ParallaxLayer offset={2.96} speed={0}>
           <Footer />
         </ParallaxLayer>
       </Parallax>

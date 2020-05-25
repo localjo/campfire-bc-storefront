@@ -1,75 +1,52 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import facebook from '../img/social/facebook.svg';
-import instagram from '../img/social/instagram.svg';
-import twitter from '../img/social/twitter.svg';
-import vimeo from '../img/social/vimeo.svg';
+import FbIcon from '../svg/facebook.inline.svg';
+import IgIcon from '../svg/instagram.inline.svg';
+import TwIcon from '../svg/twitter.inline.svg';
 
 const Footer = class extends React.Component {
   render() {
     return (
       <footer className="footer has-background-black has-text-white-ter">
         <div
-          className="content has-text-centered has-background-black has-text-white-ter"
+          className="content has-text-white-ter"
           style={{ paddingBottom: '3em' }}
         >
-          <div className="container has-background-black has-text-white-ter">
-            <div className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Shop
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
+          <div className="container has-text-centered has-text-white-ter">
+            <div className="columns is-mobile">
+              <div className="column is-2">
+                <Link to="/">Home</Link>
               </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Campfire Blog
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
+              <div className="column is-2">
+                <Link to="/products">Shop</Link>
               </div>
-              <div className="column is-4 social">
+              <div className="column is-2">
+                <Link to="/blog">Blog</Link>
+              </div>
+              <div className="column is-2 social">
                 <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
+                  <FbIcon
                     alt="Facebook"
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
+              </div>
+              <div className="column is-2 social">
                 <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
+                  <TwIcon
                     alt="Twitter"
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
+              </div>
+              <div className="column is-2 social">
+                <a
+                  title="instagram"
+                  href="https://instagram.com/campfirequestions"
+                >
+                  <IgIcon
                     alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
