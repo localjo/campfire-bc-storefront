@@ -71,7 +71,7 @@ const Navbar = class extends React.Component {
           <CartContext.Consumer>
             {(value) => {
               return (
-                <div className="navbar-end">
+                <div className="navbar-end has-text-centered">
                   <Link
                     className="navbar-item menu-item-bigcommerce-cart"
                     to="/cart"

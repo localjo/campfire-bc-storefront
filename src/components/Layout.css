@@ -4602,6 +4602,7 @@ button.bc-product-quick-view__close-button:focus, button.bc-product-quick-view__
 }
 
 .bigcommerce-cart__item-count {
+  font-family: Arial, Helvetica, sans-serif;
   display: inline-block;
   background-color: #5273f4;
   color: #fff;
@@ -5533,7 +5534,8 @@ button.bc-link.bc-cart-item__remove-button, button.bc-btn.bc-btn--form-submit.bc
 }
 
 .bigcommerce-cart__item-count {
-  background-color: #000;
+  background-color: rgb(222, 130, 88);
+  color: #000;
   margin-left: .5rem;
   padding-right: 1px;
 }
