@@ -1,10 +1,14 @@
-import React from 'react'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import Layout from '../../components/Layout'
+import React from 'react';
+import { kebabCase } from 'lodash';
+import Helmet from 'react-helmet';
+import { Link, graphql } from 'gatsby';
+import { ParallaxLayer } from '@react-spring/parallax';
 
-const TagsPage = ({
+import ContentTop from '../../svg/content-top-wide.inline.svg';
+import Layout from '../../components/Layout';
+
+const TagsTemplate = ({
+  bannerOffset,
   data: {
     allMarkdownRemark: { group },
     site: {
@@ -12,33 +16,46 @@ const TagsPage = ({
     },
   },
 }) => (
-  <Layout>
-    <section className="section">
-      <Helmet title={`Tags | ${title}`} />
-      <div className="container content">
-        <div className="columns">
-          <div
-            className="column is-10 is-offset-1"
-            style={{ marginBottom: '6rem' }}
-          >
-            <h1 className="title is-size-2 is-bold-light">Tags</h1>
-            <ul className="taglist">
-              {group.map(tag => (
-                <li key={tag.fieldValue}>
-                  <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                    {tag.fieldValue} ({tag.totalCount})
-                  </Link>
-                </li>
-              ))}
-            </ul>
+  <>
+    <ParallaxLayer offset={bannerOffset - 0.05} speed={0}>
+      {/* Cover background */}
+      <ContentTop style={{ marginBottom: '-10px' }} />
+      <div className="section is-cover" style={{ minHeight: '3000px' }}></div>
+    </ParallaxLayer>
+    <ParallaxLayer offset={bannerOffset} speed={0}>
+      <section className="section">
+        <Helmet title={`Tags | ${title}`} />
+        <div className="container content">
+          <div className="columns">
+            <div
+              className="column is-10 is-offset-1"
+              style={{ marginBottom: '6rem' }}
+            >
+              <h1 className="title is-size-2 is-bold-light">Tags</h1>
+              <ul className="taglist">
+                {group.map((tag) => (
+                  <li key={tag.fieldValue}>
+                    <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                      {tag.fieldValue} ({tag.totalCount})
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </Layout>
-)
+      </section>
+    </ParallaxLayer>
+  </>
+);
 
-export default TagsPage
+const TagsPage = ({ data }) => (
+  <Layout>
+    <TagsTemplate data={data} />
+  </Layout>
+);
+
+export default TagsPage;
 
 export const tagPageQuery = graphql`
   query TagsQuery {
@@ -54,4 +71,4 @@ export const tagPageQuery = graphql`
       }
     }
   }
-`
+`;

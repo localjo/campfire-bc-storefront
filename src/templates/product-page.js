@@ -18,7 +18,7 @@ export const ProductPageTemplate = ({
     <ParallaxLayer offset={bannerOffset - 0.05} speed={0}>
       {/* Cover background */}
       <ContentTop style={{ marginBottom: '-10px' }} />
-      <div className="section" style={{ minHeight: '3000px' }}></div>
+      <div className="section is-cover" style={{ minHeight: '3000px' }}></div>
     </ParallaxLayer>
     <ParallaxLayer offset={bannerOffset} speed={0}>
       <div className="content">
