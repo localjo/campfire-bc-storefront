@@ -6,6 +6,7 @@ image: /img/city-background.jpg
 heading: Campfire time!
 mainpitch:
   title: What is Campfire?
+  shortdescription: Campfire is a card game that brings people together to share stories.
   description: >
     For millennia, people have come together around campfires to warm themselves and build friendships. Campfire is a question-based card game that brings people together to create a cozy environment, share stories, have fun, and get to know each other.
 bigimage:
@@ -15,7 +16,7 @@ intro:
   blurbs:
     - title: Kindling
       text: >
-        Start with some kindling as you warm-up and get comfortable.
+        Start with some kindling questions as you warm-up and get comfortable.
     - title: Flames
       text: >
         Once the fire is started, get a little closer and more personal around some flames.
