@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0.622 11.674 196.11 79.897" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="7 23 184 65" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <filter id="drop-shadow-filter-2" x="-500%" y="-500%" width="1000%" height="1000%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="0"/>

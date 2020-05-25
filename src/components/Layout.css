@@ -5537,7 +5537,6 @@ button.bc-link.bc-cart-item__remove-button, button.bc-btn.bc-btn--form-submit.bc
   background-color: rgb(222, 130, 88);
   color: #000;
   margin-left: .5rem;
-  padding-right: 1px;
 }
 
 @media only screen and (max-width: 600px) {

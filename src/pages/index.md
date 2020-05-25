@@ -21,7 +21,7 @@ intro:
         Once the fire is started, get a little closer and more personal around some flames.
     - title: Sparks
       text: >
-        As the fire grows, sparks can keep things wild (for adults only).
+        As the fire grows, sparks can make things wild (for adults only).
     - title: Embers
       text: >
         If you feel like you could share anything with the people you’re playing with, end the game with a few embers.

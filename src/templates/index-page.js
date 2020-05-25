@@ -37,14 +37,14 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
 
     <ParallaxLayer offset={0.78} speed={0}>
       <div className="section">
-        <div className="columns">
-          <div className="column is-one-third">
+        <div className="columns is-vcentered">
+          <div className="column is-5 is-offset-1">
             <CardBack
               className="card-svg"
               style={{ transform: 'rotate(-1deg)' }}
             />
           </div>
-          <div className="column is-offset-2 is-4 has-text-centered-touch is-hidden-short">
+          <div className="column is-5 has-text-centered-touch is-hidden-short">
             <p className="subtitle">{intro.blurbs[4].text}</p>
           </div>
         </div>
@@ -52,8 +52,8 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
     </ParallaxLayer>
     <ParallaxLayer offset={0.78} speed={0.05}>
       <div className="section">
-        <div className="columns">
-          <div className="column is-offset-7 is-one-third">
+        <div className="columns is-vcentered">
+          <div className="column is-5 is-offset-1">
             <CardBack
               className="card-svg"
               style={{ transform: 'rotate(4deg)' }}
@@ -63,7 +63,7 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
       </div>
     </ParallaxLayer>
     <ParallaxLayer offset={0.81} speed={0.05}>
-      <div className="column is-12 has-text-centered">
+      <div className="is-offset-6 column is-5 has-text-centered">
         <Link className="btn" to="/products">
           Get a Copy!
         </Link>
@@ -72,15 +72,15 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
 
     <ParallaxLayer offset={1.15} speed={0}>
       <div className="section">
-        <div className="columns">
-          <div className="column is-4 is-offset-1">
+        <div className="columns is-vcentered">
+          <div className="column is-5 is-offset-1">
             <CardBack
               className="card-svg"
               style={{ transform: 'rotate(-4deg)' }}
             />
           </div>
-          <div className="column is-4 has-text-centered-touch is-hidden-short">
-            <h2 className="title is-spaced is-4">{intro.blurbs[0].title}</h2>
+          <div className="column is-5 has-text-centered-touch is-hidden-short">
+            <h2 className="title is-4">{intro.blurbs[0].title}</h2>
             <p className="subtitle">{intro.blurbs[0].text}</p>
           </div>
         </div>
@@ -88,8 +88,8 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
     </ParallaxLayer>
     <ParallaxLayer offset={1.19} speed={0.05}>
       <div className="section">
-        <div className="columns">
-          <div className="column is-one-third is-offset-one-fifth">
+        <div className="columns is-vcentered">
+          <div className="column is-5 is-offset-1">
             <KindlingCard
               className="card-svg"
               style={{
@@ -103,24 +103,24 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
 
     <ParallaxLayer offset={1.52} speed={0}>
       <div className="section">
-        <div className="columns">
-          <div className="column is-offset-1 is-4">
+        <div className="columns is-vcentered">
+          <div className="column is-5 is-offset-1">
             <CardBack
               className="card-svg"
               style={{ transform: 'rotate(4deg)' }}
             />
           </div>
-          <div className="column is-offset-2 is-4 has-text-centered-touch is-hidden-short">
-            <h2 className="title is-spaced is-4">{intro.blurbs[1].title}</h2>
-            <p className="subtitle is-spaced">{intro.blurbs[1].text}</p>
+          <div className="column is-5 has-text-centered-touch is-hidden-short">
+            <h2 className="title is-4">{intro.blurbs[1].title}</h2>
+            <p className="subtitle">{intro.blurbs[1].text}</p>
           </div>
         </div>
       </div>
     </ParallaxLayer>
     <ParallaxLayer offset={1.58} speed={0.05}>
       <div className="section">
-        <div className="columns">
-          <div className="column is-one-third">
+        <div className="columns is-vcentered">
+          <div className="column is-5 is-offset-1">
             <FlamesCard
               className="card-svg"
               style={{ transform: 'rotate(-2deg)' }}
@@ -132,8 +132,8 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
 
     <ParallaxLayer offset={1.91} speed={0}>
       <div className="section">
-        <div className="columns">
-          <div className="column is-4 is-offset-1">
+        <div className="columns is-vcentered">
+          <div className="column is-5 is-offset-1">
             <CardBack
               className="card-svg"
               style={{ transform: 'rotate(-4deg)' }}
@@ -144,15 +144,15 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
     </ParallaxLayer>
     <ParallaxLayer offset={1.98} speed={0.05}>
       <div className="section">
-        <div className="columns">
-          <div className="column is-one-third is-offset-one-fifth">
+        <div className="columns is-vcentered">
+          <div className="column is-5 is-offset-1">
             <SparksCard
               className="card-svg"
               style={{ transform: 'rotate(2deg)' }}
             />
           </div>
-          <div className="column is-4 has-text-centered-touch is-hidden-short">
-            <h2 className="title is-spaced is-4">{intro.blurbs[2].title}</h2>
+          <div className="column is-5 has-text-centered-touch is-hidden-short">
+            <h2 className="title is-4">{intro.blurbs[2].title}</h2>
             <p className="subtitle">{intro.blurbs[2].text}</p>
           </div>
         </div>
@@ -161,8 +161,8 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
 
     <ParallaxLayer offset={2.28} speed={0}>
       <div className="section">
-        <div className="columns">
-          <div className="column is-offset-7 is-one-third">
+        <div className="columns is-vcentered">
+          <div className="column is-5 is-offset-1">
             <CardBack
               className="card-svg"
               style={{ transform: 'rotate(4deg)' }}
@@ -173,15 +173,15 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
     </ParallaxLayer>
     <ParallaxLayer offset={2.38} speed={0.05}>
       <div className="section">
-        <div className="columns">
-          <div className="column is-one-third">
+        <div className="columns is-vcentered">
+          <div className="column is-5 is-offset-1">
             <EmbersCard
               className="card-svg"
               style={{ transform: 'rotate(-2deg)' }}
             />
           </div>
-          <div className="column is-offset-2 is-4 has-text-centered-touch is-hidden-short">
-            <h2 className="title is-spaced is-4">{intro.blurbs[3].title}</h2>
+          <div className="column is-5 has-text-centered-touch is-hidden-short">
+            <h2 className="title is-4">{intro.blurbs[3].title}</h2>
             <p className="subtitle">{intro.blurbs[3].text}</p>
           </div>
         </div>
