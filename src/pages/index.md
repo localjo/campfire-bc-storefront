@@ -24,7 +24,7 @@ intro:
         As the fire grows, sparks can make things wild (for adults only).
     - title: Embers
       text: >
-        If you feel like you could share anything with the people you’re playing with, end the game with a few embers.
+        If you feel like getting really close, end the Campfire around a few embers.
     - title: Categories
       text: >
         Campfire is played in four phases that build on each other as the game goes on.
