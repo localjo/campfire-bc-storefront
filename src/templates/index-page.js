@@ -1,5 +1,5 @@
 import React from 'react';
-import { ParallaxLayer } from '@react-spring/parallax';
+import { ParallaxLayer } from 'rspjs';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, cloneElement } from 'react';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import { Parallax, ParallaxLayer } from 'rspjs';
 import { Helmet } from 'react-helmet';
 
 import BackgroundNarrow from '../svg/background-narrow.inline.svg';
