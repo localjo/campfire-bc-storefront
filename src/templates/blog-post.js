@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
-import { ParallaxLayer } from '@react-spring/parallax';
+import { ParallaxLayer } from 'rspjs';
 import ContentTop from '../svg/content-top-wide.inline.svg';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';

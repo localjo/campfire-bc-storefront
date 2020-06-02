@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import { ParallaxLayer } from '@react-spring/parallax';
+import { ParallaxLayer } from 'rspjs';
 
 import ContentTop from '../svg/content-top-wide.inline.svg';
 

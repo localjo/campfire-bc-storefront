@@ -2,7 +2,7 @@ import React from 'react';
 import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
-import { ParallaxLayer } from '@react-spring/parallax';
+import { ParallaxLayer } from 'rspjs';
 
 import ContentTop from '../../svg/content-top-wide.inline.svg';
 import Layout from '../../components/Layout';

@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import Cart from '../../components/bigcommerce/Cart';
 
-import { ParallaxLayer } from '@react-spring/parallax';
+import { ParallaxLayer } from 'rspjs';
 import ContentTop from '../../svg/content-top-wide.inline.svg';
 
 const CartPageTemplate = ({ bannerOffset }) => (

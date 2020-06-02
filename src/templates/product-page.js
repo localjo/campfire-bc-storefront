@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ParallaxLayer } from '@react-spring/parallax';
+import { ParallaxLayer } from 'rspjs';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import ProductCard from '../components/bigcommerce/ProductCard';
