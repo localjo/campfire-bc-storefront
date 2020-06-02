@@ -5544,3 +5544,90 @@ button.bc-link.bc-cart-item__remove-button, button.bc-btn.bc-btn--form-submit.bc
     margin-bottom: 1rem;
   }
 }
+
+#___gatsby {
+  font-family: 'Alata', Helvetica, sans-serif;
+}
+
+.navbar-burger {
+  width: 60px;
+  height: 60px;
+}
+
+.navbar-burger span {
+  width: 2rem;
+  height: 0.2rem;
+  left: calc(50% - 15px);
+}
+
+.navbar-burger span:nth-child(1) {
+  top: calc(50% - (1rem / 2));
+}
+
+.navbar-burger span:nth-child(2) {
+  top: 50%;
+}
+
+.navbar-burger span:nth-child(3) {
+  top: calc(50% + (1rem / 2));
+}
+
+.navbar-burger.is-active span:nth-child(3) {
+  top: calc(50% + (1rem / 8));
+}
+
+.subtitle {
+  font-size: 1.23rem;
+}
+
+.scene-image {
+  position: absolute;
+}
+
+.section.is-cover {
+  background: rgb(30, 38, 80);
+  min-height: 600px;
+}
+
+.card-svg {
+  max-width: 400px;
+  margin: 0 auto 1em auto;
+  display: block;
+}
+
+.is-visible-very-short {
+  display: none
+}
+
+@media screen and (max-width: 420px) and (min-aspect-ratio: 1/2) {
+  .is-visible-very-short {
+    display: block;
+  }
+  .is-hidden-very-short {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 420px) and (min-aspect-ratio: 5/14) {
+  .is-hidden-short {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 421px) and (max-width: 499px) and (min-aspect-ratio: 21/50) {
+  .is-hidden-short {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 599px) and (min-aspect-ratio: 25/51) {
+  .is-hidden-short {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 675px) and (min-aspect-ratio: 30/51) {
+  .is-hidden-short {
+    display: none;
+  }
+}

@@ -79,7 +79,19 @@ const TemplateWrapper = ({ children }) => {
       <BackgroundNarrow className="scene-image is-hidden-tablet" />
       <Background className="scene-image is-hidden-mobile is-hidden-fullhd" />
       <BackgroundWide className="scene-image is-hidden-touch is-hidden-desktop-only is-hidden-widescreen-only" />
-      <Parallax ref={parallaxRef} pages={3} scrolling="false">
+      <Parallax
+        ref={parallaxRef}
+        pages={3}
+        scrolling="false"
+        config={{
+          mass: 1,
+          tension: 170,
+          friction: 26,
+          clamp: true,
+          precision: 0.01,
+          velocity: 0,
+        }}
+      >
         <ParallaxLayer offset={0} speed={-0.6}>
           <PineTreesNarrow className="scene-image is-hidden-tablet" />
           <PineTrees className="scene-image is-hidden-mobile is-hidden-fullhd" />

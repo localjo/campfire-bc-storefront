@@ -174,26 +174,6 @@ $menu-label-color: $white-ter
     .navbar-item:hover, .navbar-item:focus
       background: $campfire-pink
 
-#___gatsby
-  font-family: 'Alata', Helvetica, sans-serif
-  .navbar-burger
-    width: 60px
-    height: 60px
-    span
-      width: 2rem
-      height: 0.2rem
-      left: calc(50% - 15px);
-      &:nth-child(1)
-        top: calc(50% - (1rem / 2))
-      &:nth-child(2)
-        top: 50%
-      &:nth-child(3)
-        top: calc(50% + (1rem / 2))
-    &.is-active
-      span
-        &:nth-child(3)
-          top: calc(50% + (1rem / 8))
-
 .has-background-black
   background-color: rgba(0,0,0,0.6) !important
 
@@ -210,39 +190,3 @@ $menu-label-color: $white-ter
 .navbar-item
   font-weight: bold
 
-.scene-image
-  position: absolute
-
-.section.is-cover
-  background: $body-background-color
-  min-height: 600px // Required to keep backgrounds from showing up when scrolling parallax
-
-.card-svg
-  max-width: 400px
-  margin: 0 auto 1em auto
-  display: block
-
-.is-visible-very-short
-  display: none
-
-@media screen and  (max-width: 420px) and (min-aspect-ratio: 15/29)
-  .is-visible-very-short
-    display: block
-  .is-hidden-very-short
-    display: none
-
-@media screen and (max-width: 420px) and (min-aspect-ratio: 5/14)
-  .is-hidden-short
-    display: none
-
-@media screen and (min-width: 421px) and (max-width: 499px) and (min-aspect-ratio: 21/50)
-  .is-hidden-short
-    display: none
-
-@media screen and (min-width: 500px) and (max-width: 599px) and (min-aspect-ratio: 25/51)
-  .is-hidden-short
-    display: none
-
-@media screen and (min-width: 600px) and (max-width: 675px) and (min-aspect-ratio: 30/51)
-  .is-hidden-short
-    display: none
