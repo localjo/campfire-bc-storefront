@@ -21,17 +21,17 @@ export const ProductPageTemplate = ({
       <div className="section is-cover" style={{ minHeight: '3000px' }}></div>
     </ParallaxLayer>
     <ParallaxLayer offset={bannerOffset} speed={0}>
-      <div className="content">
-        <section className="section section--gradient">
-          <div className="container">
-            <div className="section bc-product-grid bc-product-grid--archive bc-product-grid--4col">
-              {products.map((product) => (
+      <section className="section">
+        <div className="columns is-multiline">
+          {products.map((product) => (
+            <div className="column is-6">
+              <div className="container has-text-centered">
                 <ProductCard key={product.id} product={product} />
-              ))}
+              </div>
             </div>
-          </div>
-        </section>
-      </div>
+          ))}
+        </div>
+      </section>
     </ParallaxLayer>
   </>
 );

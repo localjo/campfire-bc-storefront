@@ -1828,7 +1828,7 @@ span.flatpickr-weekday {
 .bc-product__title-link {
   text-decoration: none;
   box-shadow: none !important;
-  color: #34313f;
+  color: white;
   opacity: 1;
   transition: all 0.15s ease-in-out;
 }
@@ -1940,12 +1940,6 @@ span.flatpickr-weekday {
   margin-bottom: 0;
   font-weight: 400;
   position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .bc-get-prices-wrapper, .bc-product__pricing--api, .bc-product__pricing--cached {
@@ -2736,7 +2730,7 @@ input.bc-product-variant__radio--hidden {
 }
 
 .bc-alert {
-  background-color: #168fc0;
+  background-color: rgb(41, 54, 114);
   color: #fff;
   font-size: 1em;
   line-height: 1.5;
@@ -2751,11 +2745,11 @@ input.bc-product-variant__radio--hidden {
 }
 
 .bc-alert--success {
-  background-color: #3ec889;
+  background-color: rgb(188, 55, 128);
 }
 
 .bc-alert--error {
-  background-color: #ff0012;
+  background-color: rgb(222, 130, 88);
 }
 
 .bc-alert-group .bc-alert:not(:last-child) {
@@ -2763,8 +2757,7 @@ input.bc-product-variant__radio--hidden {
 }
 
 .bc-alert-group--info {
-  background-color: #cdcdcd;
-  color: #34313f;
+  background-color: rgb(30, 38, 80);
   font-size: 0.875em;
 }
 
@@ -3044,20 +3037,8 @@ input.bc-product-variant__radio--hidden {
 }
 
 .bc-account-login__form input[type='submit'], .bc-btn, .entry-content .bc-btn, .entry-content a.bc-btn, .entry-content button.bc-btn, a.bc-btn, button.bc-btn {
-  display: inline-block;
-  font-family: sans-serif;
   width: 100%;
-  padding: 15px 20px;
-  border-radius: 0;
-  font-weight: 600;
-  line-height: 1.6;
-  font-size: 0.813em;
-  text-transform: uppercase;
   text-align: center;
-  text-decoration: none;
-  box-shadow: none;
-  opacity: 1;
-  transition: all 0.15s ease-in-out;
 }
 
 @media (min-width: 960px) {
@@ -3073,21 +3054,15 @@ input.bc-product-variant__radio--hidden {
 }
 
 .bc-account-login__form input[type='submit'][disabled], .bc-btn[disabled], .entry-content .bc-btn[disabled], .entry-content a.bc-btn[disabled], .entry-content button.bc-btn[disabled], a.bc-btn[disabled], button.bc-btn[disabled] {
-  background-color: #5e5e5e;
-  color: #fff;
   padding: 15px 20px;
   line-height: 1.6;
-  font-family: sans-serif;
   opacity: 0.6;
   cursor: not-allowed;
 }
 
 .bc-account-login__form input[type='submit'][disabled]:focus, .bc-account-login__form input[type='submit'][disabled]:hover, .bc-btn[disabled]:focus, .bc-btn[disabled]:hover, .entry-content .bc-btn[disabled]:focus, .entry-content .bc-btn[disabled]:hover, .entry-content a.bc-btn[disabled]:focus, .entry-content a.bc-btn[disabled]:hover, .entry-content button.bc-btn[disabled]:focus, .entry-content button.bc-btn[disabled]:hover, a.bc-btn[disabled]:focus, a.bc-btn[disabled]:hover, button.bc-btn[disabled]:focus, button.bc-btn[disabled]:hover {
-  background-color: #5e5e5e;
-  color: #fff;
   padding: 15px 20px;
   line-height: 1.6;
-  font-family: sans-serif;
   opacity: 0.6;
 }
 
@@ -3102,8 +3077,6 @@ input.bc-product-variant__radio--hidden {
 .bc-account-login__form input[type='submit']--inverse, .bc-btn--inverse, .entry-content .bc-btn--inverse, .entry-content a.bc-btn--inverse, .entry-content button.bc-btn--inverse, a.bc-btn--inverse, button.bc-btn--inverse {
   padding: 11px 20px;
   box-sizing: border-box;
-  background-color: transparent;
-  border: 4px solid;
 }
 
 @keyframes c {
@@ -3169,6 +3142,9 @@ input.bc-product-variant__radio--hidden {
   flex-direction: column;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 20px;
 }
 
 .bc-product-card .bc-quickview-trigger {
@@ -3209,8 +3185,9 @@ input.bc-product-variant__radio--hidden {
 
 .bc-product-card__featured-image img {
   display: block;
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: 300px;
+  margin: 0 auto;
 }
 
 .bc-product__meta {
@@ -5166,7 +5143,7 @@ span.bc-account-address__name {
 
 .bc-order-shipment .bc-order-meta__label {
   font-size: 0.75em;
-  fonot-weight: 700;
+  font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0;
   text-transform: none;
@@ -5424,23 +5401,6 @@ span.bc-account-address__name {
   text-transform: uppercase;
 }
 
-.bc-btn, button.bc-btn, a.bc-btn, .entry-content .bc-btn, .entry-content button.bc-btn, .entry-content a.bc-btn, .bigcommerce-cart__item-count, .bc-account-login__form input[type='submit'] {
-  color: #fff;
-  background-color: #5273f4;
-}
-
-.bc-btn--inverse, button.bc-btn--inverse, a.bc-btn--inverse, .entry-content .bc-btn--inverse, .entry-content button.bc-btn--inverse, .entry-content a.bc-btn--inverse {
-  color: #5273f4;
-  background-color: #fff;
-  border-color: #5273f4;
-}
-
-.bc-btn--inverse:hover, .bc-btn--inverse:focus, button.bc-btn--inverse:hover, button.bc-btn--inverse:focus, a.bc-btn--inverse:hover, a.bc-btn--inverse:focus {
-  color: #fff;
-  background-color: #5273f4;
-  border-color: #5273f4;
-}
-
 .bc-link {
   color: #5273f4;
 }
@@ -5515,10 +5475,6 @@ button.bc-link.bc-cart-item__remove-button, button.bc-btn.bc-btn--form-submit.bc
 }
 
 /* Overrides */
-
-.bc-btn {
-  background-color: black !important;
-}
 
 .bc-cart-item-quantity button {
   background-color: transparent !important;

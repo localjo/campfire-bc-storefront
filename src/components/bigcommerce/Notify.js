@@ -36,10 +36,10 @@ const Notification = ({ id, text, type }) => {
       <div className="Content">
         <div className="Message">
           <div className="Title">
-            <div className="Text">Your Cart</div>
+            <div className="Text">Your Bag</div>
             <div className="Icon" onClick={() => removeNotification(id)}>
               <img
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABs0lEQVRIie3WsWtUQRDH8U8CESxsDCLqJWihjSBa+EeIGvMPWNgpmksp/gEWgikUBUWxsNRKMdgmVVrttBFBG0GEnIWY5DiL2yOb4M3b9y6IRQYG9s3N731n5/btLrv2j2ysRu40LuE8jqKV4l/xGW/wCl92qrgjeIwN9Cq8ixepsJFsFj8LgNu9g5mm0Hn9GdSF5rNv14XOjgjN4cUzb2nW3qjth0vAz3YQOvAnVdBpw1fvQpZ3O4u/zOJ3h2g3bH5+f7V2UPU6zqS8ffiGNRxPsdMpZ5j+egR+Gwh7WMF4yp3HgzSewLsK7WIE/lgh7uFqyt2D/Wl8q0D3IQJ3Cl7wAwczzQn8KtB1ctC4rVayd6/h97bnboGuF/1Y0urLKXdvVujNAl3Y6qrFtZTBFnAljSfwvkIbLq4bgXAdp1LeSf0Wf8dkip0Vn2DXIvBUIL6TcsawnMUfZvr7QdHhBgJPg6qb+qMqKP2Dv+SzKvVVHCoBwzllN44q7+JiKXRgbaNfBObqQgc2o1nbV3GhKXRgB3BPfPLks3yu4D+tc71t2bzeHrP1evtJf4N4nZ537f+xPwy4fAaD89ELAAAAAElFTkSuQmCC"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAFBlWElmTU0AKgAAAAgAAgESAAMAAAABAAEAAIdpAAQAAAABAAAAJgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAHqADAAQAAAABAAAAHgAAAADYnBkbAAABWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgpMwidZAAACKElEQVRIDe2WO0tcQRTHvYJCQBtFJL5YC20EMUU+hJioX8FO8VVZWKpYCNkiIYEErCxNpSi2Wtlqp40sKIog4qMQV5fr7ywz7GTYmTt7VySFB/6cx5z/OTOzM3O3puZd3mgHotA+cRx3kTsChkAGdACRM5ADW2AjiqJTdPVCw3bwBzyDJCmQsA4yVXWmwCi4B5XKHYThVM0hzgJZQVoR7kxFzSHISqtpqicrNcJWTmIHSLO9upmtZdvb7JXX2gH8RdBQJp421AhxwUtmZl3AdXqzmkzOMtDy14h/00FLS019/XR6STM4YxFM9wnnk2SjG8ElyIMeFRvAlhyXTJY6WRaMHRdLxffRxZ8HLaf+p2pah30AfLJttSu5sI59TDU2rprV4zcpez6Ad1TqZFmQ5QQmyTUJrZqK3QsekkiM32mOaPtUh7zdeXiPRhHxC4bvMmNzwG58bg467Dk+BDes4APAjHLkLTlyzfCF6fxjUyjpcO1KMyGhs2BM2XK4DoFPvIdrysOUq9KvGvVhy1W6As0q9hnb9QYwFE9IXllhsNNDXhES4xHYA1p+6WIEfuigpWXS7gdEFV61SK/h/taTc2q6tIOQaxU6oVsSPzobmgMkDgLf7xXaVD6LX83aiTYEeber+SYLdzqxUbkEiMMgzbbL9n4pVzM4RoEW8B34vjwMF0VWuQYSf9OQJ7I4SYrJddB/b7ux9fWQv7cnQB6ITV4y8d/l/9mBF9YWxvjQYnCFAAAAAElFTkSuQmCC"
                 alt="Close"
               />
             </div>
@@ -53,16 +53,16 @@ const Notification = ({ id, text, type }) => {
           <div className="Actions">
             <Link
               to="/cart"
-              className="bc-btn"
+              className="btn bc-btn"
               onClick={() => removeNotification(id)}
             >
-              View Cart
+              View Bag
             </Link>
             <a
               href={value.state.cart.redirectUrls.checkout_url}
-              className="bc-btn"
+              className="btn bc-btn"
             >
-              Proceed to Checkout
+              Go to Checkout
             </a>
           </div>
         </div>

@@ -9,7 +9,11 @@ class ProductCard extends React.Component {
 
     return (
       <div className="bc-product-card">
-        <Link to={`/products${product.custom_url.url}`} className="bc-product-card-image-anchor" title={product.name}>
+        <Link
+          to={`/products${product.custom_url.url}`}
+          className="bc-product-card-image-anchor"
+          title={product.name}
+        >
           <div className="bc-product-card__featured-image">
             <img
               className="attachment-bc-medium size-bc-medium"
@@ -24,19 +28,26 @@ class ProductCard extends React.Component {
 
         <div className="bc-product__meta">
           <h3 className="bc-product__title">
-            <Link to={`/products${product.custom_url.url}`} className="bc-product__title-link" title={product.name}>{product.name}</Link>
+            <Link
+              to={`/products${product.custom_url.url}`}
+              className="bc-product__title-link"
+              title={product.name}
+            >
+              {product.name}
+            </Link>
           </h3>
-          
+
           <ProductPrices product={product} />
         </div>
 
         <AddToCartButton
           productId={product.variants[0].product_id}
-          variantId={product.variants[0].id}>
-          Add to Cart
+          variantId={product.variants[0].id}
+        >
+          Add to Bag
         </AddToCartButton>
       </div>
-    )
+    );
   }
 }
 
