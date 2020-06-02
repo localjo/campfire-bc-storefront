@@ -5520,6 +5520,8 @@ span.bc-account-address__name {
 .section.is-cover {
   background: rgb(30, 38, 80);
   min-height: 600px;
+  position: relative;
+  z-index: 1;
 }
 
 .card-svg {

@@ -21,10 +21,14 @@ import './all.sass';
 import './Layout.css';
 import useSiteMetadata from './SiteMetadata';
 
-const TemplateWrapper = ({ children }) => {
+const Passthrough = ({ children }) => <>{children}</>;
+
+const TemplateWrapper = ({ children, isStatic }) => {
   const { title, description } = useSiteMetadata();
   const parallaxRef = useRef();
   const [bannerOffset, setBannerOffset] = useState(0.5);
+  const SceneWrapper = isStatic ? Passthrough : Parallax;
+  const Scene = isStatic ? Passthrough : ParallaxLayer;
   useEffect(() => {
     function handleResize() {
       const { innerWidth, innerHeight } = window;
@@ -80,7 +84,7 @@ const TemplateWrapper = ({ children }) => {
       <BackgroundNarrow className="scene-image is-hidden-tablet" />
       <Background className="scene-image is-hidden-mobile is-hidden-fullhd" />
       <BackgroundWide className="scene-image is-hidden-touch is-hidden-desktop-only is-hidden-widescreen-only" />
-      <Parallax
+      <SceneWrapper
         ref={parallaxRef}
         pages={3}
         scrolling="false"
@@ -93,24 +97,36 @@ const TemplateWrapper = ({ children }) => {
           velocity: 0,
         }}
       >
-        <ParallaxLayer offset={0} speed={-0.6}>
-          <PineTreesNarrow className="scene-image is-hidden-tablet" />
-          <PineTrees className="scene-image is-hidden-mobile is-hidden-fullhd" />
-          <PineTreesWide className="scene-image is-hidden-touch is-hidden-desktop-only is-hidden-widescreen-only" />
-        </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={-0.3}>
-          <CampfireNarrow className="scene-image is-hidden-tablet" />
-          <Campfire className="scene-image is-hidden-mobile is-hidden-fullhd" />
-          <CampfireWide className="scene-image is-hidden-touch is-hidden-desktop-only is-hidden-widescreen-only" />
-        </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0}>
-          <Navbar />
-        </ParallaxLayer>
+        <div
+          className="scene-frame"
+          style={
+            isStatic
+              ? {
+                  maxHeight: '100px',
+                  overflow: 'hidden',
+                }
+              : {}
+          }
+        >
+          <Scene offset={0} speed={-0.6}>
+            <PineTreesNarrow className="scene-image is-hidden-tablet" />
+            <PineTrees className="scene-image is-hidden-mobile is-hidden-fullhd" />
+            <PineTreesWide className="scene-image is-hidden-touch is-hidden-desktop-only is-hidden-widescreen-only" />
+          </Scene>
+          <Scene offset={0} speed={-0.3}>
+            <CampfireNarrow className="scene-image is-hidden-tablet" />
+            <Campfire className="scene-image is-hidden-mobile is-hidden-fullhd" />
+            <CampfireWide className="scene-image is-hidden-touch is-hidden-desktop-only is-hidden-widescreen-only" />
+          </Scene>
+          <Scene offset={0} speed={0}>
+            <Navbar />
+          </Scene>
+        </div>
         {cloneElement(children, { bannerOffset })}
-        <ParallaxLayer offset={2.96} speed={0}>
+        <Scene offset={2.96} speed={0}>
           <Footer />
-        </ParallaxLayer>
-      </Parallax>
+        </Scene>
+      </SceneWrapper>
     </>
   );
 };

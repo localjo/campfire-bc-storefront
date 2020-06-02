@@ -18,6 +18,7 @@ $navbar-item-color: white
 $campfire-pink: rgb(188, 55, 128)
 $link: white
 $link-hover: white
+$label-color: white
 
 $family-primary: 'Alata', Helvetica, sans-serif;
 
@@ -74,6 +75,7 @@ $family-primary: 'Alata', Helvetica, sans-serif;
   color: #fff
   text-align: center
   transition: all .15s ease
+  text-decoration: none !important
   cursor: pointer
   border: none;
   &:hover
@@ -93,7 +95,7 @@ $family-primary: 'Alata', Helvetica, sans-serif;
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
 footer.footer
-  padding: 0rem 1rem 0rem 1.2rem
+  padding: 0.5rem 1rem 0rem 1.2rem
   background-color: transparent
 
 //Menu overrides
@@ -126,20 +128,15 @@ $menu-label-color: $white-ter
   fill: $campfire-pink
 
 // blog roll
-.blog-list-item
-  border-radius: 0 !important
-  border-left: 4px solid #000 !important
-  box-shadow: none !important
-  background-color: #fff !important
-.blog-list-item.is-featured:before
-  border: 2px solid #000
-  color: #000
+.blog-list-item.is-featured .post-meta:after
+  border: 2px solid #fff
+  color: #fff
   content: "Featured Blog Post"
   font-size: .8rem
   font-variant: all-small-caps;
   padding: .2rem
   position: relative
-  top: -10px
+  top: 10px
 .blog-list-item.is-featured .blog-list-item .featured-thumbnail
   flex-basis: 15%
 .blog-list-item header

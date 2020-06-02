@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import { ParallaxLayer } from 'rspjs';
 
 import ContentTop from '../svg/content-top-wide.inline.svg';
 
@@ -24,33 +23,26 @@ class TagsTemplate extends React.Component {
     } tagged with “${tag}”`;
     return (
       <>
-        <ParallaxLayer offset={this.props.bannerOffset - 0.05} speed={0}>
-          {/* Cover background */}
-          <ContentTop style={{ marginBottom: '-10px' }} />
-          <div
-            className="section is-cover"
-            style={{ minHeight: '3000px' }}
-          ></div>
-        </ParallaxLayer>
-        <ParallaxLayer offset={this.props.bannerOffset} speed={0}>
-          <section className="section">
-            <Helmet title={`${tag} | ${title}`} />
-            <div className="container content">
-              <div className="columns">
-                <div
-                  className="column is-10 is-offset-1"
-                  style={{ marginBottom: '6rem' }}
-                >
-                  <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
-                  <ul className="taglist">{postLinks}</ul>
-                  <p>
-                    <Link to="/tags/">Browse all tags</Link>
-                  </p>
-                </div>
+        <ContentTop
+          style={{ marginBottom: '-10px', zIndex: 1, position: 'relative' }}
+        />
+        <section className="section is-cover" style={{ minHeight: '90vh' }}>
+          <Helmet title={`${tag} | ${title}`} />
+          <div className="container content">
+            <div className="columns">
+              <div
+                className="column is-10 is-offset-1"
+                style={{ marginBottom: '6rem' }}
+              >
+                <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
+                <ul className="taglist">{postLinks}</ul>
+                <p>
+                  <Link to="/tags/">Browse all tags</Link>
+                </p>
               </div>
             </div>
-          </section>
-        </ParallaxLayer>
+          </div>
+        </section>
       </>
     );
   }
@@ -58,7 +50,7 @@ class TagsTemplate extends React.Component {
 class TagRoute extends React.Component {
   render() {
     return (
-      <Layout>
+      <Layout isStatic={true}>
         <TagsTemplate
           data={this.props.data}
           pageContext={this.props.pageContext}

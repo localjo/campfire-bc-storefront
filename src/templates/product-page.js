@@ -1,32 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ParallaxLayer } from 'rspjs';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import ProductCard from '../components/bigcommerce/ProductCard';
 import ContentTop from '../svg/content-top-wide.inline.svg';
 
-export const ProductPageTemplate = ({
-  image,
-  title,
-  heading,
-  description,
-  products,
-  bannerOffset,
-}) => (
+export const ProductPageTemplate = ({ products }) => (
   <>
-    <ParallaxLayer offset={bannerOffset - 0.05} speed={0}>
-      {/* Cover background */}
-      <ContentTop style={{ marginBottom: '-10px' }} />
-      <div className="section is-cover" style={{ minHeight: '3000px' }}></div>
-    </ParallaxLayer>
-    <ParallaxLayer offset={bannerOffset} speed={0}>
-      <section className="section">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </section>
-    </ParallaxLayer>
+    <ContentTop
+      style={{ marginBottom: '-10px', zIndex: 1, position: 'relative' }}
+    />
+    <section className="section is-cover" style={{ minHeight: '90vh' }}>
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </section>
   </>
 );
 
@@ -43,7 +31,7 @@ const ProductPage = ({ data }) => {
   const products = data.allBigCommerceProducts.nodes;
 
   return (
-    <Layout>
+    <Layout isStatic={true}>
       <ProductPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { ParallaxLayer } from 'rspjs';
 import { Link } from 'gatsby';
 
 import ContentTop from '../svg/content-top-wide.inline.svg';
@@ -46,59 +45,55 @@ const ProductDetailTemplate = ({
   };
   return (
     <>
-      <ParallaxLayer offset={bannerOffset - 0.05} speed={0}>
-        {/* Cover background */}
-        <ContentTop style={{ marginBottom: '-10px' }} />
-        <div className="section is-cover" style={{ minHeight: '3000px' }}></div>
-      </ParallaxLayer>
-      <ParallaxLayer offset={bannerOffset} speed={0}>
-        <div className="content">
-          <section className="section">
-            <div className="bc-product-single">
-              <section className="bc-product-single__top">
-                <div className="bc-product__gallery">
-                  <img
-                    src={
-                      (selectedImage && selectedImage) ||
-                      '/img/default-bc-product.png'
-                    }
-                    alt={name}
-                    style={{ objectFit: 'contain' }}
-                  />
-                </div>
+      <ContentTop
+        style={{ marginBottom: '-10px', zIndex: 1, position: 'relative' }}
+      />
+      <div className="content">
+        <section className="section is-cover" style={{ minHeight: '90vh' }}>
+          <div className="bc-product-single">
+            <section className="bc-product-single__top">
+              <div className="bc-product__gallery">
+                <img
+                  src={
+                    (selectedImage && selectedImage) ||
+                    '/img/default-bc-product.png'
+                  }
+                  alt={name}
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
 
-                <div className="bc-product-single__meta">
-                  <h1 className="bc-product__title">{name}</h1>
+              <div className="bc-product-single__meta">
+                <h1 className="bc-product__title">{name}</h1>
 
-                  <ProductPrices product={product} />
+                <ProductPrices product={product} />
 
-                  <div
-                    className="bc-product__description"
-                    dangerouslySetInnerHTML={{ __html: description }}
-                  ></div>
+                <div
+                  className="bc-product__description"
+                  dangerouslySetInnerHTML={{ __html: description }}
+                ></div>
 
-                  <AddToCartButton
-                    productId={bigcommerce_id}
-                    variantId={variants[0].id}
-                  >
-                    Add to Bag
-                  </AddToCartButton>
-                </div>
-              </section>
-            </div>
-            <div className="bc-product-single">
-              <Link to={`/products`}>See other products</Link>
-            </div>
-          </section>
-        </div>
-      </ParallaxLayer>
+                <AddToCartButton
+                  productId={bigcommerce_id}
+                  variantId={variants[0].id}
+                >
+                  Add to Bag
+                </AddToCartButton>
+              </div>
+            </section>
+          </div>
+          <div className="bc-product-single">
+            <Link to={`/products`}>See other products</Link>
+          </div>
+        </section>
+      </div>
     </>
   );
 };
 
 export default ({ data }) => {
   return (
-    <Layout>
+    <Layout isStatic={true}>
       <ProductDetailTemplate data={data} />
     </Layout>
   );

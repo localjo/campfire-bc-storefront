@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
-import { ParallaxLayer } from 'rspjs';
 import ContentTop from '../svg/content-top-wide.inline.svg';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
@@ -15,45 +14,40 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
-  bannerOffset,
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
     <>
-      <ParallaxLayer offset={bannerOffset - 0.05} speed={0}>
-        {/* Cover background */}
-        <ContentTop style={{ marginBottom: '-10px' }} />
-        <div className="section is-cover" style={{ minHeight: '3000px' }}></div>
-      </ParallaxLayer>
-      <ParallaxLayer offset={bannerOffset} speed={0}>
-        <section className="section">
-          {helmet || ''}
-          <div className="container content">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                  {title}
-                </h1>
-                <p>{description}</p>
-                <PostContent content={content} />
-                {tags && tags.length ? (
-                  <div style={{ marginTop: `4rem` }}>
-                    <h4>Tags</h4>
-                    <ul className="taglist">
-                      {tags.map((tag) => (
-                        <li key={tag + `tag`}>
-                          <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : null}
-              </div>
+      <ContentTop
+        style={{ marginBottom: '-10px', zIndex: 1, position: 'relative' }}
+      />
+      <section className="section is-cover">
+        {helmet || ''}
+        <div className="container content">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+                {title}
+              </h1>
+              <p>{description}</p>
+              <PostContent content={content} />
+              {tags && tags.length ? (
+                <div style={{ marginTop: `4rem` }}>
+                  <h4>Tags</h4>
+                  <ul className="taglist">
+                    {tags.map((tag) => (
+                      <li key={tag + `tag`}>
+                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </div>
           </div>
-        </section>
-      </ParallaxLayer>
+        </div>
+      </section>
     </>
   );
 };
@@ -70,7 +64,7 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
+    <Layout isStatic={true}>
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}

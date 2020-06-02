@@ -1,7 +1,6 @@
 import React from 'react';
 import { navigate } from 'gatsby-link';
 import Layout from '../../components/Layout';
-import { ParallaxLayer } from 'rspjs';
 
 import ContentTop from '../../svg/content-top-wide.inline.svg';
 
@@ -38,118 +37,98 @@ class ContactTemplate extends React.Component {
   render() {
     return (
       <>
-        <ParallaxLayer offset={this.props.bannerOffset - 0.05} speed={0}>
-          {/* Cover background */}
-          <ContentTop style={{ marginBottom: '-10px' }} />
-          <div
-            className="section is-cover"
-            style={{ minHeight: '3000px' }}
-          ></div>
-        </ParallaxLayer>
-        <ParallaxLayer offset={this.props.bannerOffset} speed={0}>
-          <div className="container is-fluid">
-            <section className="section">
-              <div className="container">
-                <h2 className="title has-text-centered">Contact Us</h2>
-                <div className="columns">
-                  <div className="column is-6">
-                    <img
-                      src="/img/architecture-blur.jpg"
-                      alt=""
-                      style={{ borderRadius: '6px' }}
-                    />
-                  </div>
-                  <div className="column is-5 is-offset-1">
-                    <div className="container">
-                      <div className="content">
-                        <form
-                          name="contact"
-                          method="post"
-                          action="/contact/thanks/"
-                          data-netlify="true"
-                          data-netlify-honeypot="bot-field"
-                          onSubmit={this.handleSubmit}
-                        >
-                          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+        <ContentTop
+          style={{ marginBottom: '-10px', zIndex: 1, position: 'relative' }}
+        />
+        <section className="section is-cover" style={{ minHeight: '90vh' }}>
+          <div className="container">
+            <h2 className="title has-text-centered">Contact Us</h2>
+            <div className="columns">
+              <div className="column is-10 is-offset-1">
+                <div className="container">
+                  <div className="content">
+                    <form
+                      name="contact"
+                      method="post"
+                      action="/contact/thanks/"
+                      data-netlify="true"
+                      data-netlify-honeypot="bot-field"
+                      onSubmit={this.handleSubmit}
+                    >
+                      {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                      <input type="hidden" name="form-name" value="contact" />
+                      <div hidden>
+                        <label>
+                          Don’t fill this out:{' '}
                           <input
-                            type="hidden"
-                            name="form-name"
-                            value="contact"
+                            name="bot-field"
+                            onChange={this.handleChange}
                           />
-                          <div hidden>
-                            <label>
-                              Don’t fill this out:{' '}
-                              <input
-                                name="bot-field"
-                                onChange={this.handleChange}
-                              />
-                            </label>
-                          </div>
-                          <div className="field">
-                            <label className="label" htmlFor={'name'}>
-                              Your name
-                            </label>
-                            <div className="control">
-                              <input
-                                className="input"
-                                type={'text'}
-                                name={'name'}
-                                onChange={this.handleChange}
-                                id={'name'}
-                                required={true}
-                              />
-                            </div>
-                          </div>
-                          <div className="field">
-                            <label className="label" htmlFor={'email'}>
-                              Email
-                            </label>
-                            <div className="control">
-                              <input
-                                className="input"
-                                type={'email'}
-                                name={'email'}
-                                onChange={this.handleChange}
-                                id={'email'}
-                                required={true}
-                              />
-                            </div>
-                          </div>
-                          <div className="field">
-                            <label className="label" htmlFor={'message'}>
-                              Message
-                            </label>
-                            <div className="control">
-                              <textarea
-                                className="textarea"
-                                name={'message'}
-                                onChange={this.handleChange}
-                                id={'message'}
-                                required={true}
-                              />
-                            </div>
-                          </div>
-                          <div className="field">
-                            <button className="btn" type="submit">
-                              Send
-                            </button>
-                          </div>
-                        </form>
+                        </label>
                       </div>
-                    </div>
+                      <div className="field">
+                        <label className="label" htmlFor={'name'}>
+                          Your name
+                        </label>
+                        <div className="control">
+                          <input
+                            className="input"
+                            type={'text'}
+                            name={'name'}
+                            onChange={this.handleChange}
+                            id={'name'}
+                            required={true}
+                          />
+                        </div>
+                      </div>
+                      <div className="field">
+                        <label className="label" htmlFor={'email'}>
+                          Email
+                        </label>
+                        <div className="control">
+                          <input
+                            className="input"
+                            type={'email'}
+                            name={'email'}
+                            onChange={this.handleChange}
+                            id={'email'}
+                            required={true}
+                          />
+                        </div>
+                      </div>
+                      <div className="field">
+                        <label className="label" htmlFor={'message'}>
+                          Message
+                        </label>
+                        <div className="control">
+                          <textarea
+                            className="textarea"
+                            name={'message'}
+                            onChange={this.handleChange}
+                            id={'message'}
+                            required={true}
+                          />
+                        </div>
+                      </div>
+                      <div className="field">
+                        <button className="btn" type="submit">
+                          Send
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
           </div>
-        </ParallaxLayer>
+        </section>
       </>
     );
   }
 }
 
 export default () => (
-  <Layout>
+  <Layout isStatic={true}>
     <ContactTemplate />
   </Layout>
 );
