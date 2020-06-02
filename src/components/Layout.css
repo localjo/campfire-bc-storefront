@@ -24,6 +24,10 @@
   color: #34313f;
 }
 
+.content a {
+  text-decoration: underline;
+}
+
 /*@font-face {
     font-family: bigcommerce-icons;
     src: url(../fonts/icons-bigcommerce/bigcommerce-icons.woff2?3rjos2) format("woff2"),url(../fonts/icons-bigcommerce/bigcommerce-icons.ttf?3rjos2) format("truetype"),url(../fonts/icons-bigcommerce/bigcommerce-icons.woff?3rjos2) format("woff"),url(../fonts/icons-bigcommerce/bigcommerce-icons.svg?3rjos2#bigcommerce-icons) format("svg");
@@ -1834,8 +1838,7 @@ span.flatpickr-weekday {
 }
 
 .bc-product__title-link:focus, .bc-product__title-link:hover {
-  color: #34313f;
-  opacity: 0.8;
+  color: white;
 }
 
 .bc-product__title-link:focus .bc-product-flag--grey, .bc-product__title-link:hover .bc-product-flag--grey {
@@ -3051,18 +3054,15 @@ input.bc-product-variant__radio--hidden {
   opacity: 0.9;
   text-decoration: none;
   box-shadow: none;
+  outline: 1px dotted rgba(255, 255, 255, 0.5);
 }
 
 .bc-account-login__form input[type='submit'][disabled], .bc-btn[disabled], .entry-content .bc-btn[disabled], .entry-content a.bc-btn[disabled], .entry-content button.bc-btn[disabled], a.bc-btn[disabled], button.bc-btn[disabled] {
-  padding: 15px 20px;
-  line-height: 1.6;
   opacity: 0.6;
   cursor: not-allowed;
 }
 
 .bc-account-login__form input[type='submit'][disabled]:focus, .bc-account-login__form input[type='submit'][disabled]:hover, .bc-btn[disabled]:focus, .bc-btn[disabled]:hover, .entry-content .bc-btn[disabled]:focus, .entry-content .bc-btn[disabled]:hover, .entry-content a.bc-btn[disabled]:focus, .entry-content a.bc-btn[disabled]:hover, .entry-content button.bc-btn[disabled]:focus, .entry-content button.bc-btn[disabled]:hover, a.bc-btn[disabled]:focus, a.bc-btn[disabled]:hover, button.bc-btn[disabled]:focus, button.bc-btn[disabled]:hover {
-  padding: 15px 20px;
-  line-height: 1.6;
   opacity: 0.6;
 }
 
@@ -3746,6 +3746,9 @@ input.bc-product-variant__radio--hidden {
   max-width: 970px;
   padding: 0 20px;
   margin: 0 auto;
+  margin-bottom: 4em;
+  padding-bottom: 4em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bc-product-single .bc-product-single__top {
@@ -4348,8 +4351,6 @@ button.bc-product-quick-view__close-button:focus, button.bc-product-quick-view__
 
 .bc-cart-item__remove-button {
   display: block;
-  background: transparent;
-  color: #5273f4;
   font-size: 0.625em;
   text-transform: none;
   padding: 5px 0;
@@ -4363,17 +4364,9 @@ button.bc-product-quick-view__close-button:focus, button.bc-product-quick-view__
   }
 }
 
-.bc-cart-item__remove-button:focus, .bc-cart-item__remove-button:hover {
-  background: transparent;
-  color: #5e5e5e;
-}
-
 .bc-cart-item__remove-button:focus[disabled], .bc-cart-item__remove-button:hover[disabled] {
   text-transform: none;
-  background: transparent;
-  color: #5e5e5e;
   padding: 5px;
-  opacity: 0.4;
 }
 
 .bc-cart-item-image {
@@ -5401,14 +5394,6 @@ span.bc-account-address__name {
   text-transform: uppercase;
 }
 
-.bc-link {
-  color: #5273f4;
-}
-
-.bc-cart-item__remove-button {
-  color: #5273f4;
-}
-
 .bc-product__out_of_stock, .bc-product__low_inventory {
   color: #34313f;
 }
@@ -5437,10 +5422,6 @@ span.bc-account-address__name {
   padding-left: 0.3em;
 }
 
-button.bc-link.bc-cart-item__remove-button, button.bc-btn.bc-btn--form-submit.bc-btn--add_to_cart, button.bc-btn.bc-cart-actions__checkout-button {
-  border: none;
-}
-
 .bc-btn {
   cursor: pointer;
 }
@@ -5452,9 +5433,10 @@ button.bc-link.bc-cart-item__remove-button, button.bc-btn.bc-btn--form-submit.bc
 .bc-cart-item-quantity button {
   background: transparent;
   border: none;
-  color: #333;
+  color: white;
   font-size: 1.25em;
   font-weight: 300;
+  min-height: 3em;
 }
 
 .bc-cart-item-quantity button:hover {
@@ -5481,11 +5463,10 @@ button.bc-link.bc-cart-item__remove-button, button.bc-btn.bc-btn--form-submit.bc
 }
 
 .bc-cart-item__remove-button {
-  border: 1px solid #e0e3e9!important;
   padding: 4px;
   cursor: pointer;
-  border-radius: 3px;
-  color: #e0e3e9;
+  border: none;
+  padding: 5px 10px;
   font-size: 0.8rem;
 }
 
@@ -5499,10 +5480,6 @@ button.bc-link.bc-cart-item__remove-button, button.bc-btn.bc-btn--form-submit.bc
   .bc-product__actions {
     margin-bottom: 1rem;
   }
-}
-
-#___gatsby {
-  font-family: 'Alata', Helvetica, sans-serif;
 }
 
 .navbar-burger {

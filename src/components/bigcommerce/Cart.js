@@ -6,7 +6,7 @@ import Loader from '../Loader';
 
 import CartContext from '../../context/CartProvider';
 
-const AdjustItem = props => {
+const AdjustItem = (props) => {
   const { item, updatingItem, cartType } = props;
   let minusBtn, plusBtn;
 
@@ -14,18 +14,20 @@ const AdjustItem = props => {
     minusBtn = (
       <button
         className="bc-btn"
-        onClick={() => props.updateCartItemQuantity(item, 'minus')}>
+        onClick={() => props.updateCartItemQuantity(item, 'minus')}
+      >
         -
       </button>
-    )
+    );
 
     plusBtn = (
       <button
         className="bc-btn"
-        onClick={() => props.updateCartItemQuantity(item, 'plus')}>
+        onClick={() => props.updateCartItemQuantity(item, 'plus')}
+      >
         +
       </button>
-    )
+    );
   }
 
   return (
@@ -33,20 +35,20 @@ const AdjustItem = props => {
       {minusBtn}
 
       {updatingItem === item.id ? <Loader /> : <div>{item.quantity}</div>}
-      
+
       {plusBtn}
     </div>
   );
 };
 
-const CustomItems = props => {
+const CustomItems = (props) => {
   const { items } = props;
   const cartType = props.cartType;
   let itemImage;
 
   return (
     <>
-      {items.map(item => {
+      {items.map((item) => {
         if (cartType === 'full') {
           itemImage = (
             <div className="bc-cart-item-image">
@@ -54,22 +56,23 @@ const CustomItems = props => {
               <button
                 className="bc-link bc-cart-item__remove-button"
                 onClick={() => props.removeItemFromCart(item.id)}
-                type="button">
+                type="button"
+              >
                 Remove
               </button>
             </div>
-          )
+          );
         }
 
         return (
           <div className="bc-cart-item" key={item.id}>
             {itemImage}
-            
+
             <div className="bc-cart-item-meta">
               <h3 className="bc-cart-item__product-title">{item.name}</h3>
               <span className="bc-cart-item__product-brand">{item.sku}</span>
             </div>
-            
+
             <AdjustItem {...props} item={item} cartType={cartType} />
 
             <div className="bc-cart-item-total-price">
@@ -79,38 +82,39 @@ const CustomItems = props => {
               />
             </div>
           </div>
-        )
+        );
       })}
     </>
   );
 };
 
-const StandardItems = props => {
+const StandardItems = (props) => {
   const { items } = props;
   const cartType = props.cartType;
   let itemImage;
 
   return (
     <>
-      {items.map(item => {
+      {items.map((item) => {
         if (cartType === 'full') {
           itemImage = (
             <div className="bc-cart-item-image">
               <img src={item.image_url} alt={`${item.name}`} />
               <button
-                className="bc-link bc-cart-item__remove-button"
+                className="btn bc-link bc-cart-item__remove-button"
                 onClick={() => props.removeItemFromCart(item.id)}
-                type="button">
+                type="button"
+              >
                 Remove
               </button>
             </div>
-          )
+          );
         }
 
         return (
           <div className="bc-cart-item" key={item.id}>
             {itemImage}
-            
+
             <div className="bc-cart-item-meta">
               <h3 className="bc-cart-item__product-title">{item.name}</h3>
               <span className="bc-cart-item__product-brand">{item.sku}</span>
@@ -125,31 +129,32 @@ const StandardItems = props => {
               />
             </div>
           </div>
-        )
+        );
       })}
     </>
   );
 };
 
-const GiftCertificateItems = props => {
+const GiftCertificateItems = (props) => {
   const items = props.items;
   const cartType = props.cartType;
   let itemImage;
 
   return (
     <>
-      {items.map(item => {
+      {items.map((item) => {
         if (cartType === 'full') {
           itemImage = (
             <div className="bc-cart-item-image">
               <button
-                className="bc-link bc-cart-item__remove-button"
+                className="btn bc-link bc-cart-item__remove-button"
                 onClick={() => props.removeItemFromCart(item.id)}
-                type="button">
+                type="button"
+              >
                 Remove
               </button>
             </div>
-          )
+          );
         }
 
         return (
@@ -172,7 +177,7 @@ const GiftCertificateItems = props => {
               />
             </div>
           </div>
-        )
+        );
       })}
     </>
   );
@@ -181,11 +186,11 @@ const GiftCertificateItems = props => {
 const Cart = class extends React.Component {
   render() {
     const cartType = this.props.cartType;
-    let cartFooter;             
+    let cartFooter;
 
     return (
       <CartContext.Consumer>
-        {value => {
+        {(value) => {
           if (!value) {
             return null;
           }
@@ -195,7 +200,7 @@ const Cart = class extends React.Component {
             cartAmount,
             lineItems,
             numberItems,
-            redirectUrls
+            redirectUrls,
           } = state.cart;
           const { updatingItem } = state;
 
@@ -217,17 +222,19 @@ const Cart = class extends React.Component {
                     <form
                       action={redirectUrls.checkout_url}
                       method="post"
-                      encType="multipart/form-data">
+                      encType="multipart/form-data"
+                    >
                       <button
-                        className="bc-btn bc-cart-actions__checkout-button"
-                        type="submit">
-                        Proceed to Checkout
+                        className="btn bc-btn bc-cart-actions__checkout-button"
+                        type="submit"
+                      >
+                        Go to Checkout
                       </button>
                     </form>
                   </div>
                 )}
               </footer>
-            )
+            );
           }
 
           return (
@@ -244,7 +251,7 @@ const Cart = class extends React.Component {
                 {state.cartLoading ? (
                   <div className="bc-cart__empty">
                     <h2 className="bc-cart__title--empty">
-                      <em>Loading Cart</em>
+                      <em>Loading Bag</em>
                     </h2>
                   </div>
                 ) : numberItems > 0 ? (

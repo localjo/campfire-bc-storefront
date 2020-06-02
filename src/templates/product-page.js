@@ -22,15 +22,9 @@ export const ProductPageTemplate = ({
     </ParallaxLayer>
     <ParallaxLayer offset={bannerOffset} speed={0}>
       <section className="section">
-        <div className="columns is-multiline">
-          {products.map((product) => (
-            <div className="column is-6">
-              <div className="container has-text-centered">
-                <ProductCard key={product.id} product={product} />
-              </div>
-            </div>
-          ))}
-        </div>
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </section>
     </ParallaxLayer>
   </>
@@ -86,6 +80,7 @@ export const productPageQuery = graphql`
         calculated_price
         retail_price
         sale_price
+        description
         map_price
         bigcommerce_id
         custom_url {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { ParallaxLayer } from 'rspjs';
+import { Link } from 'gatsby';
 
 import ContentTop from '../svg/content-top-wide.inline.svg';
 import AddToCartButton from '../components/bigcommerce/AddToCartButton';
@@ -52,20 +53,6 @@ const ProductDetailTemplate = ({
       </ParallaxLayer>
       <ParallaxLayer offset={bannerOffset} speed={0}>
         <div className="content">
-          <div className="has-text-centered margin-top-0">
-            <h1
-              className="has-text-weight-bold is-size-1"
-              style={{
-                boxShadow:
-                  '0.5rem 0 0 rgba(0, 0, 0, 1), -0.5rem 0 0 rgba(0, 0, 0, 1)',
-                backgroundColor: 'rgba(0, 0, 0, 1)',
-                color: 'white',
-                padding: '1rem',
-              }}
-            >
-              {name}
-            </h1>
-          </div>
           <section className="section">
             <div className="bc-product-single">
               <section className="bc-product-single__top">
@@ -75,29 +62,9 @@ const ProductDetailTemplate = ({
                       (selectedImage && selectedImage) ||
                       '/img/default-bc-product.png'
                     }
-                    alt="Main"
+                    alt={name}
                     style={{ objectFit: 'contain' }}
                   />
-                  <div
-                    style={{
-                      display: 'flex',
-                      cursor: 'pointer',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    {images.length &&
-                      images.map((img) => (
-                        // eslint-disable-next-line
-                        <img
-                          height="100px"
-                          width="100px"
-                          src={img.url_thumbnail}
-                          alt="Thumb"
-                          key={JSON.stringify(img)}
-                          onClick={() => updateSelectedImage(img.url_standard)}
-                        />
-                      ))}
-                  </div>
                 </div>
 
                 <div className="bc-product-single__meta">
@@ -105,39 +72,22 @@ const ProductDetailTemplate = ({
 
                   <ProductPrices product={product} />
 
-                  <span className="bc-product__sku">
-                    <span className="bc-product-single__meta-label">SKU:</span>{' '}
-                    {sku}
-                  </span>
+                  <div
+                    className="bc-product__description"
+                    dangerouslySetInnerHTML={{ __html: description }}
+                  ></div>
 
                   <AddToCartButton
                     productId={bigcommerce_id}
                     variantId={variants[0].id}
                   >
-                    Add to Cart
+                    Add to Bag
                   </AddToCartButton>
                 </div>
               </section>
-              <section className="bc-single-product__description">
-                <h4 className="bc-single-product__section-title">
-                  Product Description
-                </h4>
-                <div
-                  className="bc-product__description"
-                  dangerouslySetInnerHTML={{ __html: description }}
-                ></div>
-              </section>
-              <section className="bc-single-product__specifications">
-                <h4 className="bc-single-product__section-title">
-                  Specifications
-                </h4>
-                <ul className="bc-product__spec-list">
-                  <li className="bc-product__spec">
-                    <span className="bc-product__spec-title">Weight:</span>{' '}
-                    <span className="bc-product__spec-value">{weight} oz</span>
-                  </li>
-                </ul>
-              </section>
+            </div>
+            <div className="bc-product-single">
+              <Link to={`/products`}>See other products</Link>
             </div>
           </section>
         </div>

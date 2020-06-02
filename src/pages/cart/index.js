@@ -20,8 +20,6 @@ const CartPageTemplate = ({ bannerOffset }) => (
           style={{
             boxShadow:
               '0.5rem 0 0 rgba(0, 0, 0, 1), -0.5rem 0 0 rgba(0, 0, 0, 1)',
-            backgroundColor: 'rgba(0, 0, 0, 1)',
-            color: 'white',
             padding: '1rem',
           }}
         >
