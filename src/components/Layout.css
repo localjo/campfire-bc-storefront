@@ -5599,7 +5599,7 @@ button.bc-link.bc-cart-item__remove-button, button.bc-btn.bc-btn--form-submit.bc
   display: none
 }
 
-@media screen and (max-width: 420px) and (min-aspect-ratio: 1/2) {
+@media screen and (max-width: 550px) and (min-aspect-ratio: 1/2) {
   .is-visible-very-short {
     display: block;
   }
