@@ -31,7 +31,6 @@ const TemplateWrapper = ({ children }) => {
       const base = innerWidth <= 768 ? 600 : innerWidth <= 1408 ? 1000 : 1500;
       const offset = ((innerWidth / base) * 600) / innerHeight;
       const newBannerOffset = Math.min(Math.max(offset, 0), 0.65);
-      console.log('nbo', newBannerOffset);
       setBannerOffset(newBannerOffset);
     }
     handleResize();
