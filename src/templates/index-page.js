@@ -139,6 +139,10 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
               style={{ transform: 'rotate(-4deg)' }}
             />
           </div>
+          <div className="column is-5 has-text-centered-touch is-hidden-short">
+            <h2 className="title is-4">{intro.blurbs[2].title}</h2>
+            <p className="subtitle">{intro.blurbs[2].text}</p>
+          </div>
         </div>
       </div>
     </ParallaxLayer>
@@ -150,10 +154,6 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
               className="card-svg"
               style={{ transform: 'rotate(2deg)' }}
             />
-          </div>
-          <div className="column is-5 has-text-centered-touch is-hidden-short">
-            <h2 className="title is-4">{intro.blurbs[2].title}</h2>
-            <p className="subtitle">{intro.blurbs[2].text}</p>
           </div>
         </div>
       </div>
@@ -168,6 +168,10 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
               style={{ transform: 'rotate(4deg)' }}
             />
           </div>
+          <div className="column is-5 has-text-centered-touch is-hidden-short">
+            <h2 className="title is-4">{intro.blurbs[3].title}</h2>
+            <p className="subtitle">{intro.blurbs[3].text}</p>
+          </div>
         </div>
       </div>
     </ParallaxLayer>
@@ -179,10 +183,6 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
               className="card-svg"
               style={{ transform: 'rotate(-2deg)' }}
             />
-          </div>
-          <div className="column is-5 has-text-centered-touch is-hidden-short">
-            <h2 className="title is-4">{intro.blurbs[3].title}</h2>
-            <p className="subtitle">{intro.blurbs[3].text}</p>
           </div>
         </div>
       </div>
