@@ -3057,6 +3057,10 @@ input.bc-product-variant__radio--hidden {
   outline: 1px dotted rgba(255, 255, 255, 0.5);
 }
 
+.bc-account-login__form input[type='submit']:hover, .bc-btn:hover, .entry-content .bc-btn:hover, .entry-content a.bc-btn:hover, .entry-content button.bc-btn:hover, a.bc-btn:hover, button.bc-btn:hover {
+  outline: none;
+}
+
 .bc-account-login__form input[type='submit'][disabled], .bc-btn[disabled], .entry-content .bc-btn[disabled], .entry-content a.bc-btn[disabled], .entry-content button.bc-btn[disabled], a.bc-btn[disabled], button.bc-btn[disabled] {
   opacity: 0.6;
   cursor: not-allowed;
