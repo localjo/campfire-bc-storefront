@@ -25,7 +25,10 @@ const Footer = class extends React.Component {
                 <Link to="/blog">Blog</Link>
               </div>
               <div className="column is-2 social">
-                <a title="facebook" href="https://facebook.com">
+                <a
+                  title="facebook"
+                  href="https://www.facebook.com/campfirequestiongame"
+                >
                   <FbIcon
                     alt="Facebook"
                     style={{ width: '1em', height: '1em' }}
@@ -33,7 +36,7 @@ const Footer = class extends React.Component {
                 </a>
               </div>
               <div className="column is-2 social">
-                <a title="twitter" href="https://twitter.com">
+                <a title="twitter" href="https://twitter.com/campfirethegame">
                   <TwIcon
                     alt="Twitter"
                     style={{ width: '1em', height: '1em' }}
