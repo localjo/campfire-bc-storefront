@@ -91,9 +91,10 @@ const ProductDetailTemplate = ({
   );
 };
 
-export default ({ data }) => {
+export default (props) => {
+  const { data } = props;
   return (
-    <Layout isStatic={true}>
+    <Layout isStatic={true} {...props}>
       <ProductDetailTemplate data={data} />
     </Layout>
   );

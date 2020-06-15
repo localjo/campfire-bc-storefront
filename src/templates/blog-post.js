@@ -60,11 +60,12 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.object,
 };
 
-const BlogPost = ({ data }) => {
+const BlogPost = (props) => {
+  const { data } = props;
   const { markdownRemark: post } = data;
 
   return (
-    <Layout isStatic={true}>
+    <Layout isStatic={true} {...props}>
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}

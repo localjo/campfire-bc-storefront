@@ -23,8 +23,28 @@ import useSiteMetadata from './SiteMetadata';
 
 const Passthrough = ({ children }) => <>{children}</>;
 
-const TemplateWrapper = ({ children, isStatic }) => {
-  const { title, description } = useSiteMetadata();
+const TemplateWrapper = ({
+  children,
+  isStatic,
+  location,
+  description,
+  lang = 'en',
+  meta = [],
+  image,
+  title,
+  type,
+}) => {
+  const siteMetadata = useSiteMetadata();
+  const metaTitle = title
+    ? `${title} | ${siteMetadata.title}`
+    : siteMetadata.title;
+  const metaDescription = description || siteMetadata.description;
+  const metaImage = image
+    ? `${siteMetadata.siteUrl}${image}`
+    : siteMetadata.siteImage;
+  const canonical = location.pathname
+    ? `${siteMetadata.siteUrl}${location.pathname}`
+    : null;
   const parallaxRef = useRef();
   const [bannerOffset, setBannerOffset] = useState(0.5);
   const SceneWrapper = isStatic ? Passthrough : Parallax;
@@ -43,43 +63,56 @@ const TemplateWrapper = ({ children, isStatic }) => {
   }, []);
   return (
     <>
-      <Helmet>
-        <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/img/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-32x32.png"
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-16x16.png"
-          sizes="16x16"
-        />
-        <link
-          rel="mask-icon"
-          href="/img/safari-pinned-tab.svg"
-          color="#ff4400"
-        />
-        <meta name="theme-color" content="#fff" />
-        <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
-        <meta property="og:image" content="/img/og-image.jpg" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-      </Helmet>
+      <Helmet
+        htmlAttributes={{ lang }}
+        title={metaTitle}
+        link={[
+          {
+            rel: 'apple-touch-icon',
+            sizes: '180x180',
+            href: '/img/apple-touch-icon.png',
+          },
+          {
+            rel: 'icon',
+            sizes: '32x32',
+            href: '/img/favicon-32x32.png',
+            type: 'image/png',
+          },
+          {
+            rel: 'icon',
+            sizes: '16x16',
+            href: '/img/favicon-16x16.png',
+            type: 'image/png',
+          },
+          {
+            rel: 'mask-icon',
+            href: '/img/safari-pinned-tab.svg',
+            color: '#ff4400',
+          },
+          ...(canonical ? [{ rel: 'canonical', href: canonical }] : []),
+        ]}
+        meta={[
+          {
+            name: 'viewport',
+            content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+          },
+          { name: 'description', content: metaDescription },
+          { name: 'keywords', content: siteMetadata.keywords },
+          { name: 'theme-color', content: '#fff' },
+          { property: 'og:title', content: metaTitle },
+          { property: 'og:description', content: metaDescription },
+          { property: 'og:image', content: metaImage },
+          ...(canonical ? [{ property: 'og:url', content: canonical }] : []),
+          ...(type ? [{ property: 'og:type', content: type }] : []),
+          ...(location.pathname === '/'
+            ? [{ property: 'og:type', content: 'business.business' }]
+            : []),
+          { name: 'twitter:title', content: metaTitle },
+          { name: 'twitter:description', content: metaDescription },
+          { name: 'twitter:image', content: metaImage },
+          { name: 'twitter:card', content: 'summary_large_image' },
+        ].concat(meta)}
+      />
       <Notify />
       <BackgroundNarrow className="scene-image is-hidden-tablet" />
       <Background className="scene-image is-hidden-mobile is-hidden-fullhd" />

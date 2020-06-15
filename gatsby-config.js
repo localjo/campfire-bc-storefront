@@ -7,6 +7,10 @@ module.exports = {
     title: 'Campfire Questions',
     description:
       'Campfire is a question-based card game that brings people together to create a cozy environment, share stories, have fun, and get to know each other.',
+    keywords:
+      'campfire, campfire game, campfire questions, card game, get to know you questions, friendship',
+    siteUrl: 'https://campfirequestions.com',
+    siteImage: 'https://campfirequestions.com/social.png',
   },
   plugins: [
     {

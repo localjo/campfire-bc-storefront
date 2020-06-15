@@ -26,12 +26,13 @@ ProductPageTemplate.propTypes = {
   products: PropTypes.array,
 };
 
-const ProductPage = ({ data }) => {
+const ProductPage = (props) => {
+  const { data } = props;
   const { frontmatter } = data.markdownRemark;
   const products = data.allBigCommerceProducts.nodes;
 
   return (
-    <Layout isStatic={true}>
+    <Layout isStatic={true} {...props}>
       <ProductPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
