@@ -23,7 +23,6 @@ export const BlogPostTemplate = ({
         style={{ marginBottom: '-10px', zIndex: 1, position: 'relative' }}
       />
       <section className="section is-cover">
-        {helmet || ''}
         <div className="container content">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -65,20 +64,16 @@ const BlogPost = (props) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout isStatic={true} {...props}>
+    <Layout
+      isStatic={true}
+      {...props}
+      title={post.frontmatter.title}
+      description={post.frontmatter.description}
+    >
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
