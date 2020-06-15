@@ -105,7 +105,7 @@ const TemplateWrapper = ({
           { property: 'og:image', content: metaImage },
           ...(canonical ? [{ property: 'og:url', content: canonical }] : []),
           ...(type ? [{ property: 'og:type', content: type }] : []),
-          ...(location.pathname === '/'
+          ...(location && location.pathname === '/'
             ? [{ property: 'og:type', content: 'business.business' }]
             : []),
           { name: 'twitter:title', content: metaTitle },
