@@ -64,7 +64,7 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
     </ParallaxLayer>
     <ParallaxLayer offset={0.825} speed={0.05}>
       <div className="is-offset-6 column is-5 has-text-centered">
-        <Link className="btn" to="/products">
+        <Link className="btn" to="/shop">
           Get a Copy!
         </Link>
       </div>
@@ -190,7 +190,7 @@ export const IndexPageTemplate = ({ mainpitch, intro, bannerOffset }) => (
 
     <ParallaxLayer offset={2.8} speed={0}>
       <div className="column is-12 has-text-centered">
-        <Link className="btn" to="/products">
+        <Link className="btn" to="/shop">
           Get a Copy!
         </Link>
       </div>

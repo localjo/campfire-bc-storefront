@@ -119,7 +119,7 @@ const TemplateWrapper = ({
       <Background className="scene-image is-hidden-mobile is-hidden-fullhd" />
       <BackgroundWide className="scene-image is-hidden-touch is-hidden-desktop-only is-hidden-widescreen-only" />
       <SceneWrapper
-        ref={parallaxRef}
+        ref={!isStatic ? parallaxRef : null}
         pages={3}
         scrolling="false"
         config={{

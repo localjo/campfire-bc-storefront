@@ -23,7 +23,7 @@ class ProductCard extends React.Component {
 
           <div className="bc-product-single__meta">
             <Link
-              to={`/products${product.custom_url.url}`}
+              to={`/shop${product.custom_url.url}`}
               className="bc-product__title-link"
               title={product.name}
             >

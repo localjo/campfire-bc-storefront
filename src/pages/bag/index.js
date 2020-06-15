@@ -21,7 +21,7 @@ const CartPageTemplate = () => (
 export default class CartIndexPage extends React.Component {
   render() {
     return (
-      <Layout isStatic={true}>
+      <Layout isStatic={true} title={'Bag'}>
         <CartPageTemplate />
       </Layout>
     );

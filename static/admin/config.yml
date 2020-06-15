@@ -114,9 +114,9 @@ collections:
                   },
                 ],
             }
-      - file: 'src/pages/products/index.md'
-        label: 'Products Page'
-        name: 'products'
+      - file: 'src/pages/shop/index.md'
+        label: 'Shop Page'
+        name: 'shop'
         fields:
           - {
               label: 'Template Key',

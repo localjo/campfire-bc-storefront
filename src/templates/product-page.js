@@ -32,7 +32,12 @@ const ProductPage = (props) => {
   const products = data.allBigCommerceProducts.nodes;
 
   return (
-    <Layout isStatic={true} {...props}>
+    <Layout
+      isStatic={true}
+      {...props}
+      title={frontmatter.title}
+      description={frontmatter.description}
+    >
       <ProductPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}

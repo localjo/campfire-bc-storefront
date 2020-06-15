@@ -52,7 +52,7 @@ const Notification = ({ id, text, type }) => {
           <Cart cartType="overlay" />
           <div className="Actions">
             <Link
-              to="/cart"
+              to="/bag"
               className="btn bc-btn"
               onClick={() => removeNotification(id)}
             >

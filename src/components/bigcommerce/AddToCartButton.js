@@ -16,7 +16,7 @@ const AddToCartButton = ({ children, productId, variantId }) => {
           disabled={addingToCart === productId}
           onClick={() => addToCart(productId, variantId)}
         >
-          {addingToCart === productId ? 'Adding to Cart' : children}
+          {addingToCart === productId ? 'Adding to Bag' : children}
         </button>
       </div>
     </div>

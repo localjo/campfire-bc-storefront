@@ -1,5 +1,6 @@
 ---
+
 templateKey: 'product-page'
-path: /products
-title: Our Products
+path: /shop
+title: Shop
 image: /img/boutique-bright-business.jpg

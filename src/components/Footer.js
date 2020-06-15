@@ -19,7 +19,7 @@ const Footer = class extends React.Component {
                 <Link to="/">Home</Link>
               </div>
               <div className="column is-2">
-                <Link to="/products">Shop</Link>
+                <Link to="/shop">Shop</Link>
               </div>
               <div className="column is-2">
                 <Link to="/blog">Blog</Link>

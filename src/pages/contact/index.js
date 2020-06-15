@@ -128,7 +128,7 @@ class ContactTemplate extends React.Component {
 }
 
 export default () => (
-  <Layout isStatic={true}>
+  <Layout isStatic={true} title={'Contact'}>
     <ContactTemplate />
   </Layout>
 );

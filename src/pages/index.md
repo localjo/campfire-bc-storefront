@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Campfire Questions
-subtitle: Your one-stop shop for unique products you'll love
+subtitle: Campfire is a card game that brings people together to share stories.
 heading: Campfire Questions
 mainpitch:
   title: What is Campfire?

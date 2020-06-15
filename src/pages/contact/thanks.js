@@ -21,7 +21,7 @@ const ThanksTemplate = ({ bannerOffset }) => (
   </>
 );
 export default () => (
-  <Layout isStatic={true}>
+  <Layout isStatic={true} title={'Thanks'}>
     <ThanksTemplate />
   </Layout>
 );

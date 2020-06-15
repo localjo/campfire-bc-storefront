@@ -13,36 +13,38 @@ Note: This starter uses Gatsby v2.
 
 The BigCommerce source plugin relies on API Keys. In this starter we are using the node project `dotenv` to access these variables. Make a copy of the `SAMPLE.env` file and fill in the variables from your [BigCommerce API user details](https://developer.bigcommerce.com/api-docs/getting-started/authentication#authentication_getting-api-credentials).
 
-*Note: You can sign up for a free trial on bigcommerce.com, which includes API access, if you don't already have an account. There is also a partner program which includes a sandbox account to play around in.*
+_Note: You can sign up for a free trial on bigcommerce.com, which includes API access, if you don't already have an account. There is also a partner program which includes a sandbox account to play around in._
 
 Once you have your API keys, do the following:
-  * Install dependencies
-  	* `yarn`
-  * Set up environment variables
-    * `cp SAMPLE.env .env` 
-    * Enter your API credentials in .env file
+
+- Install dependencies
+  - `yarn`
+- Set up environment variables
+  - `cp SAMPLE.env .env`
+  - Enter your API credentials in .env file
 
 ## Getting Started (Recommended - Netlify CLI)
 
 Netlify CMS can run in any frontend web environment, but the quickest way to try it out is by running it on a pre-configured starter site with Netlify. Because the app requires credentials for the BigCommerce API, the easiest way to get started with a working deploy is via the Netlify CLI. To do so, run the following commands:
 
-  * Link to your Netlify site
-  	* `netlify link`
-  * Build
-  	* `npm run build`
-  * Deploy to Netlify
-  	* `netlify deploy`
-
+- Link to your Netlify site
+  - `netlify link`
+- Build
+  - `npm run build`
+- Deploy to Netlify
+  - `netlify deploy`
 
 ### "One Click" Deploy
-Alternative to the CLI, you can use the deploy button below to build and deploy your own copy of the repository. This is recommended if you have not already forked the repo (as it will make a copy of it). 
 
-*Note: The initial deploy will fail, as you need to set build environment variables for your Netlify site*
+Alternative to the CLI, you can use the deploy button below to build and deploy your own copy of the repository. This is recommended if you have not already forked the repo (as it will make a copy of it).
+
+_Note: The initial deploy will fail, as you need to set build environment variables for your Netlify site_
 
 To set the variables:
- * Navigate to your Netlify site's "Build & Deploy" settings 
- * Go to "Environment variables" > "Edit variables"
- * Enter the environment variables specified in "SAMPLE.env" and your BC API credentials 
+
+- Navigate to your Netlify site's "Build & Deploy" settings
+- Go to "Environment variables" > "Edit variables"
+- Enter the environment variables specified in "SAMPLE.env" and your BC API credentials
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/bigcommerce/gatsby-bigcommerce-netlify-cms-starter"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
 
@@ -83,7 +85,7 @@ import IndexPagePreview from './preview-templates/IndexPagePreview';
 
 CMS.registerPreviewTemplate('index', IndexPagePreview);
 CMS.registerPreviewTemplate('about', AboutPagePreview);
-CMS.registerPreviewTemplate('products', ProductPagePreview);
+CMS.registerPreviewTemplate('shop', ProductPagePreview);
 CMS.registerPreviewTemplate('blog', BlogPostPreview);
 ```
 

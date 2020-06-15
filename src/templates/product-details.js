@@ -83,7 +83,7 @@ const ProductDetailTemplate = ({
             </section>
           </div>
           <div className="bc-product-single">
-            <Link to={`/products`}>See other products</Link>
+            <Link to={`/shop`}>Back to shop</Link>
           </div>
         </section>
       </div>
@@ -93,8 +93,14 @@ const ProductDetailTemplate = ({
 
 export default (props) => {
   const { data } = props;
+  const product = data.allBigCommerceProducts.nodes[0];
   return (
-    <Layout isStatic={true} {...props}>
+    <Layout
+      isStatic={true}
+      {...props}
+      title={product.name}
+      description={product.description.replace(/<[^>]+>/g, '')}
+    >
       <ProductDetailTemplate data={data} />
     </Layout>
   );

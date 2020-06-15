@@ -63,7 +63,7 @@ const Navbar = class extends React.Component {
             <Link className="navbar-item" to="/blog">
               Blog
             </Link>
-            <Link className="navbar-item" to="/products">
+            <Link className="navbar-item" to="/shop">
               Shop
             </Link>
             <Link className="navbar-item" to="/contact">
@@ -74,7 +74,7 @@ const Navbar = class extends React.Component {
                 return (
                   <Link
                     className="navbar-item menu-item-bigcommerce-cart"
-                    to="/cart"
+                    to="/bag"
                   >
                     {value &&
                       value.state.cart &&

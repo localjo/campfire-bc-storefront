@@ -291,10 +291,10 @@ const Cart = class extends React.Component {
                 ) : (
                   <div className="bc-cart__empty">
                     <h2 className="bc-cart__title--empty">
-                      Your cart is empty.
+                      Your bag is empty.
                     </h2>
-                    <Link to="/products" className="bc-cart__continue-shopping">
-                      Take a look around.
+                    <Link to="/shop" className="bc-cart__continue-shopping">
+                      Go to shop
                     </Link>
                   </div>
                 )}
