@@ -10,7 +10,7 @@ module.exports = {
     keywords:
       'campfire, campfire game, campfire questions, card game, get to know you questions, friendship',
     siteUrl: 'https://campfirequestions.com',
-    siteImage: 'https://campfirequestions.com/social.png',
+    siteImage: 'https://campfirequestions.com/img/social.png',
   },
   plugins: [
     {
