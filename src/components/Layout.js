@@ -42,9 +42,10 @@ const TemplateWrapper = ({
   const metaImage = image
     ? `${siteMetadata.siteUrl}${image}`
     : siteMetadata.siteImage;
-  const canonical = location.pathname
-    ? `${siteMetadata.siteUrl}${location.pathname}`
-    : null;
+  const canonical =
+    location && location.pathname
+      ? `${siteMetadata.siteUrl}${location.pathname}`
+      : null;
   const parallaxRef = useRef();
   const [bannerOffset, setBannerOffset] = useState(0.5);
   const SceneWrapper = isStatic ? Passthrough : Parallax;
