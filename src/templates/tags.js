@@ -52,7 +52,7 @@ class TagRoute extends React.Component {
     const { data, pageContext } = this.props;
     return (
       <Layout isStatic={true} {...this.props}>
-        <TagsTemplate data pageContext />
+        <TagsTemplate data={data} pageContext={pageContext} />
       </Layout>
     );
   }
