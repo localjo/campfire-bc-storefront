@@ -111,6 +111,22 @@ class ContactTemplate extends React.Component {
                         </div>
                       </div>
                       <div className="field">
+                        <div className="control">
+                          <label className="label" htmlFor={'message'}>
+                            <input
+                              type="checkbox"
+                              name={'consent'}
+                              onChange={this.handleChange}
+                              id={'consent'}
+                              required={true}
+                            />{' '}
+                            I consent to campfirequestions.com and Local Jo LLC
+                            collecting and storing the data submitted in this
+                            form.
+                          </label>
+                        </div>
+                      </div>
+                      <div className="field">
                         <button className="btn" type="submit">
                           Send
                         </button>
