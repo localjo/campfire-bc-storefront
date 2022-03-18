@@ -1,6 +1,6 @@
 # Gatsby + BigCommerce + Netlify CMS Starter
 
-Note: This starter uses Gatsby v2.
+Note: This starter uses Gatsby v2 and hasn't been updated for a long time.
 
 ## Prerequisites
 
